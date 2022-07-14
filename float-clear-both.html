@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <style>
+        .container {
+            width: 800px;
+            border: 4px solid black;
+            overflow: auto;
+        }
+
+        img {
+            float: left;
+            margin: 10px;
+        }
+
+        /* .clear {
+            clear: both;
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img src="data:image/png;base64,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"
+            width="200px" alt="dicoding">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium adipisci architecto aspernatur dolorem
+            doloremque eum excepturi fuga hic, molestias obcaecati officia perferendis perspiciatis qui saepe ut velit
+            veniam vitae voluptatum.</p>
+        <div class="clear"></div>
+    </div>
+</body>
+
+</html>
