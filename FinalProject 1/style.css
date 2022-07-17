@@ -1,0 +1,538 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto";
+  font-size: 12px;
+  margin: 0;
+  background-color: #dcffdb;
+}
+
+header {
+  display: inline;
+}
+
+.container {
+  width: 900px;
+  margin: auto;
+}
+
+/* NAV TOP */
+.flex-nav {
+  display: flex;
+  flex-direction: row;
+  margin-top: 30px;
+  height: 45px;
+  z-index: 1;
+  position: sticky;
+  top: 0;
+  overflow: hidden;
+
+  box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.25);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.flex-item {
+  text-align: center;
+  background-color: #fff5f5;
+  padding: 15px;
+  border: 1px black solid;
+  flex: 5%;
+  cursor: pointer;
+  margin-left: -1px;
+}
+
+.home {
+  font-weight: 700;
+  letter-spacing: 0.2em;
+}
+.home:hover {
+  background-color: #fff5f5;
+}
+
+.hover:hover {
+  background-color: #ffc767;
+}
+
+.flex-nav > a {
+  text-decoration: none;
+  color: black;
+}
+
+/* NAV SEARCH */
+.nav-search {
+  position: relative;
+  height: 60px;
+  background: #fffb9e;
+  border: 1px solid #000000;
+  margin-top: -1px;
+}
+
+.jam {
+  position: absolute;
+  width: 120px;
+  font-family: "Lato";
+  font-weight: 400;
+  font-size: 38px;
+  text-align: left;
+  left: 20px;
+  top: 4px;
+  color: #000000;
+  padding: 4px;
+}
+
+.marquee {
+  position: absolute;
+  left: 132px;
+  width: 100px;
+  font-family: "Lato";
+  font-weight: 400;
+  font-size: 15px;
+  top: 9px;
+  text-align: left;
+  padding: 5px;
+}
+
+/* TYPE SEARCH */
+.search {
+  position: relative;
+  top: 9px;
+  float: right;
+}
+
+.nav-search input[type="text"] {
+  padding: 6px;
+  margin-top: 6px;
+  font-size: 17px;
+  border: 1px solid black;
+  box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+}
+
+.nav-search .search button {
+  float: right;
+  padding: 6px 10px;
+  margin: 1px;
+  margin-top: 6px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: 1px solid black;
+  cursor: pointer;
+  box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+}
+
+.nav-search .search button:hover {
+  background: #ccc;
+}
+
+.circle-container {
+  width: 120px;
+  margin-top: 5px;
+  padding: 6px 10px;
+  text-align: center;
+}
+
+.circle {
+  height: 13px;
+  width: 13px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.circle-container > a:hover,
+.active {
+  background-color: rgb(155, 155, 155);
+}
+
+/* Responsive layout - makes a one column-layout instead of a two-column layout */
+/* @media (max-width: 800px) {
+  .flex-item-right,
+  .flex-item-center,
+  .flex-item-left {
+    flex: 100%;
+    flex-direction: column;
+  }
+} */
+
+.slideshow {
+  border: 1px solid black;
+  background-color: #fff;
+  height: 300px;
+  margin-top: -1px;
+}
+
+.slideshow h1 {
+  text-align: center;
+  font-size: 40px;
+  margin-top: 50px;
+}
+
+.prevnext {
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  margin-top: 80px;
+  width: 400px;
+  height: 30px;
+}
+
+.prevnext .button-prev {
+  height: 30px;
+  width: 80px;
+  cursor: pointer;
+  background: #8bd3dd;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+}
+
+.prevnext .button-prev:hover {
+  background-color: #94e1ec;
+}
+
+.prevnext .button-next {
+  height: 30px;
+  width: 80px;
+  cursor: pointer;
+  background: #faae2b;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+}
+
+.prevnext .button-next:hover {
+  background-color: #fcbb4a;
+}
+
+.main {
+  border: 1px solid black;
+  margin-top: -1px;
+  background-color: #fff;
+  padding: 15px;
+  overflow: auto;
+}
+
+.sidebar {
+  /* display: block; */
+  background: #f2f7f5;
+  width: 25%;
+  /* float: right; */
+  /* padding: 5px; */
+  /* margin-left: 5px; */
+  border: 1px solid black;
+  overflow: auto;
+}
+/* .sidebar > img {
+  width: 235px;
+  margin: 5px;
+}
+
+.sidebar button {
+  padding: 5px;
+  height: 30px;
+  width: 80px;
+  cursor: pointer;
+  background: #8bd3dd;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+}
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+}
+.sidebar button:hover {
+  background-color: #94e1ec;
+} */
+
+.content {
+  float: left;
+  width: 75%;
+  background: #f2f7f5;
+  border: 1px solid black;
+}
+
+aside {
+  float: right;
+  width: 25%;
+}
+
+.profile {
+  border: 1px solid black;
+  text-align: center;
+  margin-left: 10px;
+}
+
+.post {
+  display: flex;
+  padding: 5px;
+  margin: 10px 10px 0 10px;
+}
+
+.img-post {
+  float: left;
+}
+.img-post > img {
+  width: 250px;
+  height: 100%;
+}
+
+.tumnail {
+  display: inline;
+}
+.tumnail .judul {
+  display: block;
+  margin: 10px 10px 5px 10px;
+  font-size: 24px;
+  font-weight: 700;
+}
+.tumnail .tanggal {
+  display: block;
+  font-size: 13px;
+  margin-left: 10px;
+}
+.tumnail .konten {
+  margin: 10px 15px 10px 10px;
+  display: block;
+  font-size: 15px;
+  color: #585858;
+}
+
+.page {
+  margin: 20px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+}
+.page .num,
+.span {
+  padding: 7px 10px 7px 10px;
+  background: #ffffff;
+  border: 1px solid black;
+  margin: -1px;
+  text-align: center;
+  color: #000000;
+}
+.num:hover {
+  background: #94e1ec;
+  cursor: pointer;
+  text-decoration: none;
+}
+.num:first-child {
+  background-color: #8bd3dd;
+}
+.num:first-child:hover {
+  background-color: #94e1ec;
+}
+.num:last-child {
+  background: #faae2b;
+}
+.num:last-child:hover {
+  background-color: #fcbb4a;
+}
+.num .span {
+  background: #fff;
+}
+
+a {
+  color: #277f8b;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+.footer {
+  border: 1px solid black;
+  background-color: #fff5f5;
+  margin-top: -1px;
+}
+.footer-container {
+  width: 60%;
+  display: flex;
+  /* border: 1px solid black; */
+  margin: 15px 0 15px 15px;
+}
+.kolom1 {
+  width: 50%;
+}
+.kolom2 {
+  width: 50%;
+  margin-left: 20px;
+}
+.footer-container .judul {
+  font-size: 16px;
+}
+
+.tumnail hr {
+  display: block;
+  unicode-bidi: isolate;
+  margin-block-start: 0.5em;
+  margin-block-end: 0.5em;
+  margin-inline-start: 10px;
+  overflow: hidden;
+  border-style: inset;
+  border-width: 1px;
+  color: red;
+  margin-bottom: 20px;
+}
+.komentar {
+  margin: 2px 10px 10px 10px;
+  display: block;
+  font-size: 13px;
+  color: #585858;
+}
+
+ul {
+  padding: 0 0 0 20px;
+  list-style-position: outside;
+}
+
+ul li {
+  color: darblue;
+  margin: 5px;
+}
+
+.copyr {
+  border: 1px solid black;
+  background-color: #5e4d4d;
+  color: white;
+  margin: -1px;
+  padding: 10px 20px 10px 20px;
+}
+* {
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 1000px) {
+  aside {
+    width: 100%;
+    margin: auto;
+  }
+  .content {
+    width: 100%;
+  }
+  .profile {
+    margin-left: auto;
+    margin-top: 5px;
+  }
+
+  .container {
+    width: auto;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  aside {
+    width: 100%;
+    margin: auto;
+  }
+  .content {
+    width: 100%;
+  }
+  .profile {
+    margin-left: auto;
+    margin-top: 5px;
+  }
+
+  .container {
+    width: auto;
+  }
+}
+
+/* Add a black background color to the top navigation */
+nav {
+  display: inline;
+}
+
+.topnav {
+  margin-top: 20px;
+  overflow: hidden;
+  display: flex;
+  font-size: 13px;
+  font-weight: 700;
+  background-color: #fff5f5;
+  border: 1px solid black;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  color: black;
+  cursor: pointer;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 13px;
+  flex: auto;
+  display: block;
+  border-right: 1px solid black;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ffd388;
+  color: black;
+}
+
+/* Add an active class to highlight the current page */
+.topnav a.active {
+  background-color: #fff5f5;
+  color: black;
+  letter-spacing: 0.2em;
+  margin-left: 0;
+}
+
+/* Hide the link that should open and close the topnav on small screens */
+.topnav .icon {
+  display: none;
+}
+
+.login {
+  background-color: #ffc767;
+  letter-spacing: 0.2em;
+  margin-right: -2px;
+}
+
+/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {
+    display: none;
+  }
+  .topnav a.icon {
+    float: right;
+    display: block;
+    margin-right: -2px;
+  }
+}
+
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+@media screen and (max-width: 600px) {
+  .topnav.responsive {
+    display: block;
+  }
+  .topnav.responsive a.icon {
+    position: absolute;
+    background-color: #ffc767;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    margin-right: -2px;
+    display: block;
+    text-align: left;
+  }
+}
