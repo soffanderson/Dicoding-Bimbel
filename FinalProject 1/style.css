@@ -18,49 +18,6 @@ header {
   margin: auto;
 }
 
-/* NAV TOP */
-.flex-nav {
-  display: flex;
-  flex-direction: row;
-  margin-top: 30px;
-  height: 45px;
-  z-index: 1;
-  position: sticky;
-  top: 0;
-  overflow: hidden;
-
-  box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.25);
-  font-size: 13px;
-  font-weight: 700;
-}
-
-.flex-item {
-  text-align: center;
-  background-color: #fff5f5;
-  padding: 15px;
-  border: 1px black solid;
-  flex: 5%;
-  cursor: pointer;
-  margin-left: -1px;
-}
-
-.home {
-  font-weight: 700;
-  letter-spacing: 0.2em;
-}
-.home:hover {
-  background-color: #fff5f5;
-}
-
-.hover:hover {
-  background-color: #ffc767;
-}
-
-.flex-nav > a {
-  text-decoration: none;
-  color: black;
-}
-
 /* NAV SEARCH */
 .nav-search {
   position: relative;
@@ -78,7 +35,7 @@ header {
   font-size: 38px;
   text-align: left;
   left: 20px;
-  top: 4px;
+  /* top: 4px; */
   color: #000000;
   padding: 4px;
 }
@@ -98,7 +55,7 @@ header {
 /* TYPE SEARCH */
 .search {
   position: relative;
-  top: 9px;
+  top: 4px;
   float: right;
 }
 
@@ -162,23 +119,23 @@ header {
 .slideshow {
   border: 1px solid black;
   background-color: #fff;
-  height: 300px;
+  /* height: 300px; */
   margin-top: -1px;
+  text-align: center;
 }
 
 .slideshow h1 {
-  text-align: center;
   font-size: 40px;
-  margin-top: 50px;
+  /* margin-top: 50px; */
 }
 
 .prevnext {
   display: flex;
   justify-content: space-between;
   margin: auto;
-  margin-top: 80px;
+  /* margin-top: 80px; */
   width: 400px;
-  height: 30px;
+  height: 60px;
 }
 
 .prevnext .button-prev {
@@ -270,7 +227,19 @@ aside {
 .profile {
   border: 1px solid black;
   text-align: center;
+  padding: 5px;
   margin-left: 10px;
+}
+.profile > h2,
+p {
+  margin: 3px;
+}
+.foto {
+  margin: auto;
+  width: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  overflow: auto;
 }
 
 .post {
@@ -414,6 +383,25 @@ ul li {
   box-sizing: border-box;
 }
 
+table.customTable {
+  /* width: 25%; */
+  /* background-color: #ffffff; */
+  border-collapse: collapse;
+  border-width: 0px;
+  /* border-color: #7ea8f8; */
+  border-style: solid;
+  /* color: #000000; */
+  margin-bottom: 5px;
+}
+
+table.customTable td,
+table.customTable th {
+  border-width: 0px;
+  /* border-color: #7ea8f8; */
+  border-style: solid;
+  padding: 0px;
+}
+
 @media screen and (max-width: 1000px) {
   aside {
     width: 100%;
@@ -455,7 +443,7 @@ nav {
   display: inline;
 }
 
-.topnav {
+.nav-bar {
   margin-top: 20px;
   overflow: hidden;
   display: flex;
@@ -468,8 +456,8 @@ nav {
   z-index: 1;
 }
 
-/* Style the links inside the navigation bar */
-.topnav a {
+/* Nav-bar style */
+.nav-bar a {
   color: black;
   cursor: pointer;
   text-align: center;
@@ -481,22 +469,19 @@ nav {
   border-right: 1px solid black;
 }
 
-/* Change the color of links on hover */
-.topnav a:hover {
+.nav-bar a:hover {
   background-color: #ffd388;
   color: black;
 }
 
-/* Add an active class to highlight the current page */
-.topnav a.active {
+.nav-bar a.active {
   background-color: #fff5f5;
   color: black;
   letter-spacing: 0.2em;
   margin-left: 0;
 }
 
-/* Hide the link that should open and close the topnav on small screens */
-.topnav .icon {
+.nav-bar .icon {
   display: none;
 }
 
@@ -506,30 +491,28 @@ nav {
   margin-right: -2px;
 }
 
-/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
 @media screen and (max-width: 600px) {
-  .topnav a:not(:first-child) {
+  .nav-bar a:not(:first-child) {
     display: none;
   }
-  .topnav a.icon {
+  .nav-bar a.icon {
     float: right;
     display: block;
     margin-right: -2px;
   }
 }
 
-/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
 @media screen and (max-width: 600px) {
-  .topnav.responsive {
+  .nav-bar.mquery {
     display: block;
   }
-  .topnav.responsive a.icon {
+  .nav-bar.mquery a.icon {
     position: absolute;
     background-color: #ffc767;
     right: 0;
     top: 0;
   }
-  .topnav.responsive a {
+  .nav-bar.mquery a {
     float: none;
     margin-right: -2px;
     display: block;

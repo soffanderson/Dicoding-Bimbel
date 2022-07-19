@@ -15,7 +15,7 @@
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <title>HOME | Final Project CSS</title>
+    <title>Home | Soffan's Blog</title>
 </head>
 
 <body>
@@ -24,7 +24,7 @@
         <header>
             <!-- NAV -->
             <nav>
-                <div class="topnav" id="myTopnav">
+                <div class="nav-bar" id="nav-container">
                     <a href="#home" class="active">SOFFAN</a>
                     <a href="#news">Artikel</a>
                     <a href="#contact">Unduh</a>
@@ -48,7 +48,7 @@
                 </div>
 
                 <div class="search">
-                    <form action="/action_page.php">
+                    <form action="">
                         <input type="text" placeholder="......................................................."
                             name="search">
                         <button type="submit"><i class="fa fa-search"></i></button>
@@ -189,34 +189,43 @@
             <aside>
                 <div class="profile">
                     <h2>Profile</h2>
-                    <p>My name is Soffan Marsyus Hidayat</p>
-                    <figure>
-                        <img src="assets/image/bandung-badge.png" alt="">
-                        <figcaption>Lambang</figcaption>
-                    </figure>
+                    <hr>
+                    <img src="assets/images/profile.jpg" class="foto" alt="">
+                    <br><br>
+                    <figcaption>Dipanggil Soffan.</figcaption>
+                    <br>
+                    <p>Tak kenal maka tak sayang, tak sayang maka tak dekat. Perkenalan adalah awalan dari kisah saling
+                        melupakan.</p>
                     </header>
                     <section>
-                        <h3>Informasi Lainnya</h3>
-                        <table>
+                        <h3>Biodata</h3>
+
+                        <table class="customTable">
+
                             <tr>
-                                <th>Negara</th>
-                                <td>Indonesia</td>
+                                <th>Nama</th>
+                                <td>:</td>
+                                <td>Soffan Marsyus Hidayat</td>
                             </tr>
                             <tr>
-                                <th>Hari jadi</th>
-                                <td>25 September 1810</td>
+                                <th>TTL</th>
+                                <td>:</td>
+                                <td>Jakarta, 14 Juli 1996</td>
                             </tr>
                             <tr>
-                                <th>Luas Total</th>
-                                <td>167.67 km<sup>2</sup></td>
+                                <th>Alamat</th>
+                                <td>:</td>
+                                <td>Tanah Laut, Kalsel</td>
                             </tr>
                             <tr>
-                                <th>Bahasa Daerah</th>
-                                <td>Sunda</td>
+                                <th>Join dicoding</th>
+                                <td>:</td>
+                                <td>15 Juni 2022</td>
                             </tr>
                             <tr>
-                                <th>Kode Telepon</th>
-                                <td>+62 22</td>
+                                <th>Email</th>
+                                <td>:</td>
+                                <td>s.btudz@gmail.com</td>
                             </tr>
                         </table>
                     </section>
@@ -290,13 +299,12 @@
     </div>
 
     <script>
-        /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
         function myFunction() {
-            let x = document.getElementById("myTopnav");
-            if (x.className === "topnav") {
-                x.className += " responsive";
+            let nav = document.getElementById("nav-container");
+            if (nav.className === "nav-bar") {
+                nav.className += " mquery";
             } else {
-                x.className = "topnav";
+                nav.className = "nav-bar";
             }
         }</script>
 </body>
