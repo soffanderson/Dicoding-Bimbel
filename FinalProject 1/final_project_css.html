@@ -58,7 +58,7 @@
             <!-- Slide Show -->
             <div class="slideshow">
                 <h1>WELCOME TO<br>MY PERSONAL BLOG</h1>
-                <div class="prevnext">
+                <!-- <div class="prevnext">
                     <button class="button-prev">Previous</button>
                     <div class="circle-container">
                         <a class="circle" href=""></a>
@@ -67,9 +67,37 @@
                         <a class="circle" href=""></a>
                     </div>
                     <button class="button-next">Next</button>
-                </div>
-            </div>
+                </div> -->
 
+                <div class="slideshow-container">
+                    <div class="mySlides fade">
+                        <div class="numbertext">1 / 3</div>
+                        <img src="https://images.pexels.com/photos/4016628/pexels-photo-4016628.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                            style="width:100%">
+                        <div class="text">Welcome to Tutorials Point</div>
+                    </div>
+                    <div class="mySlides fade">
+                        <div class="numbertext">2 / 3</div>
+                        <img src="https://images.pexels.com/photos/9436715/pexels-photo-9436715.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                            style="width:100%;">
+                        <div class="text">Start your Learning Today !</div>
+                    </div>
+                    <div class="mySlides fade">
+                        <div class="numbertext">3 / 3</div>
+                        <img src="https://images.pexels.com/photos/752036/pexels-photo-752036.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                            style="width:100%">
+                        <div class="text">About Us</div>
+                    </div>
+                    <a class="prev" onclick="plusSlides(-1)">❮</a>
+                    <a class="next" onclick="plusSlides(1)">❯</a>
+                </div>
+                <div style="text-align:center; margin: 10px;">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                </div>
+
+            </div>
         </header>
         <!-- END HEADER -->
 
@@ -200,7 +228,7 @@
                     <section>
                         <h3>Biodata</h3>
 
-                        <table class="customTable">
+                        <table class="tabel">
 
                             <tr>
                                 <th>Nama</th>
@@ -229,7 +257,6 @@
                             </tr>
                         </table>
                     </section>
-                    </article>
             </aside>
             <!-- End Content -->
         </main>
@@ -307,6 +334,33 @@
                 nav.className = "nav-bar";
             }
         }</script>
+
+    <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+    </script>
+
 </body>
 
 </html>
