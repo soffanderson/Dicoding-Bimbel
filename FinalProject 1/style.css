@@ -1,11 +1,142 @@
+/*** uncss> filename: https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css ***/
+/*!
+ *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
+ *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
+ */
+@font-face {
+  font-family: "FontAwesome";
+  src: url("../fonts/fontawesome-webfont.eot?v=4.7.0");
+  src: url("../fonts/fontawesome-webfont.eot?#iefix&v=4.7.0")
+      format("embedded-opentype"),
+    url("../fonts/fontawesome-webfont.woff2?v=4.7.0") format("woff2"),
+    url("../fonts/fontawesome-webfont.woff?v=4.7.0") format("woff"),
+    url("../fonts/fontawesome-webfont.ttf?v=4.7.0") format("truetype"),
+    url("../fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular")
+      format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+.fa {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.fa-search:before {
+  content: "\f002";
+}
+.fa-bars:before {
+  content: "\f0c9";
+}
+
+/*** uncss> filename: https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap ***/
+@font-face {
+  font-family: "Roboto";
+  font-style: italic;
+  font-weight: 100;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v30/KFOiCnqEu92Fr1Mu51QrIzc.ttf)
+    format("truetype");
+}
+@font-face {
+  font-family: "Roboto";
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v30/KFOjCnqEu92Fr1Mu51TjARc9.ttf)
+    format("truetype");
+}
+@font-face {
+  font-family: "Roboto";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v30/KFOkCnqEu92Fr1Mu52xP.ttf)
+    format("truetype");
+}
+@font-face {
+  font-family: "Roboto";
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v30/KFOjCnqEu92Fr1Mu51S7ABc9.ttf)
+    format("truetype");
+}
+@font-face {
+  font-family: "Roboto";
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v30/KFOjCnqEu92Fr1Mu51TzBhc9.ttf)
+    format("truetype");
+}
+@font-face {
+  font-family: "Roboto";
+  font-style: italic;
+  font-weight: 900;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v30/KFOjCnqEu92Fr1Mu51TLBBc9.ttf)
+    format("truetype");
+}
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v30/KFOkCnqEu92Fr1MmgWxP.ttf)
+    format("truetype");
+}
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmSU5vAw.ttf)
+    format("truetype");
+}
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Me5Q.ttf)
+    format("truetype");
+}
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmEU9vAw.ttf)
+    format("truetype");
+}
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmWUlvAw.ttf)
+    format("truetype");
+}
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmYUtvAw.ttf)
+    format("truetype");
+}
+
+/*** uncss> filename: style.css ***/
 * {
   box-sizing: border-box;
 }
 
 body {
-  font-family: "Roboto";
+  font-family: Roboto;
   font-size: 12px;
-  margin: 0;
   background-color: #dcffdb;
 }
 
@@ -14,29 +145,28 @@ header {
 }
 
 .container {
-  width: 900px;
+  width: 1200px;
+  min-width: 343px;
   margin: auto;
 }
 
-/* NAV SEARCH */
 .nav-search {
   position: relative;
   height: 60px;
   background: #fffb9e;
-  border: 1px solid #000000;
+  border: 1px solid #000;
   margin-top: -1px;
 }
 
 .jam {
   position: absolute;
   width: 120px;
-  font-family: "Lato";
+  font-family: Lato;
   font-weight: 400;
   font-size: 38px;
   text-align: left;
   left: 20px;
-  /* top: 4px; */
-  color: #000000;
+  color: #000;
   padding: 4px;
 }
 
@@ -44,7 +174,7 @@ header {
   position: absolute;
   left: 132px;
   width: 100px;
-  font-family: "Lato";
+  font-family: Lato;
   font-weight: 400;
   font-size: 15px;
   top: 9px;
@@ -52,7 +182,6 @@ header {
   padding: 5px;
 }
 
-/* TYPE SEARCH */
 .search {
   position: relative;
   top: 4px;
@@ -63,8 +192,8 @@ header {
   padding: 6px;
   margin-top: 6px;
   font-size: 17px;
-  border: 1px solid black;
-  box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.25);
+  border: 1px solid #000;
+  box-shadow: 0 3px 2px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
 }
 
@@ -76,147 +205,48 @@ header {
   margin-right: 16px;
   background: #ddd;
   font-size: 17px;
-  border: 1px solid black;
+  border: 1px solid #000;
   cursor: pointer;
-  box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 3px 2px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
 }
 
-.nav-search .search button:hover {
-  background: #ccc;
-}
-
-.circle-container {
-  width: 120px;
-  margin-top: 5px;
-  padding: 6px 10px;
-  text-align: center;
-}
-
-.circle {
-  height: 13px;
-  width: 13px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-}
-
-.circle-container > a:hover,
 .active {
-  background-color: rgb(155, 155, 155);
+  background-color: #9b9b9b;
 }
-
-/* Responsive layout - makes a one column-layout instead of a two-column layout */
-/* @media (max-width: 800px) {
-  .flex-item-right,
-  .flex-item-center,
-  .flex-item-left {
-    flex: 100%;
-    flex-direction: column;
-  }
-} */
 
 .slideshow {
-  border: 1px solid black;
+  border: 1px solid #000;
   background-color: #fff;
-  /* height: 300px; */
   margin-top: -1px;
   text-align: center;
+  overflow: auto;
+  padding: 20px 20px 0 20px;
+}
+
+.slideshow p {
+  font-family: Lato;
+  font-weight: 400;
+  font-size: 15px;
 }
 
 .slideshow h1 {
   font-size: 40px;
-  /* margin-top: 50px; */
-}
-
-.prevnext {
-  display: flex;
-  justify-content: space-between;
-  margin: auto;
-  /* margin-top: 80px; */
-  width: 400px;
-  height: 60px;
-}
-
-.prevnext .button-prev {
-  height: 30px;
-  width: 80px;
-  cursor: pointer;
-  background: #8bd3dd;
-  border: 1px solid #000000;
-  box-sizing: border-box;
-  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
-  border-radius: 5px;
-}
-
-.prevnext .button-prev:hover {
-  background-color: #94e1ec;
-}
-
-.prevnext .button-next {
-  height: 30px;
-  width: 80px;
-  cursor: pointer;
-  background: #faae2b;
-  border: 1px solid #000000;
-  box-sizing: border-box;
-  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
-  border-radius: 5px;
-}
-
-.prevnext .button-next:hover {
-  background-color: #fcbb4a;
 }
 
 .main {
-  border: 1px solid black;
+  border: 1px solid #000;
   margin-top: -1px;
   background-color: #fff;
   padding: 15px;
   overflow: auto;
 }
 
-.sidebar {
-  /* display: block; */
-  background: #f2f7f5;
-  width: 25%;
-  /* float: right; */
-  /* padding: 5px; */
-  /* margin-left: 5px; */
-  border: 1px solid black;
-  overflow: auto;
-}
-/* .sidebar > img {
-  width: 235px;
-  margin: 5px;
-}
-
-.sidebar button {
-  padding: 5px;
-  height: 30px;
-  width: 80px;
-  cursor: pointer;
-  background: #8bd3dd;
-  border: 1px solid #000000;
-  box-sizing: border-box;
-  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
-  border-radius: 5px;
-}
-.button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 5px;
-}
-.sidebar button:hover {
-  background-color: #94e1ec;
-} */
-
 .content {
   float: left;
   width: 75%;
   background: #f2f7f5;
-  border: 1px solid black;
+  border: 1px solid #000;
 }
 
 aside {
@@ -225,15 +255,18 @@ aside {
 }
 
 .profile {
-  border: 1px solid black;
+  border: 1px solid #000;
+  background-color: #cbf7ff;
   text-align: center;
   padding: 5px;
   margin-left: 10px;
 }
+
 .profile > h2,
 p {
   margin: 3px;
 }
+
 .foto {
   margin: auto;
   width: 150px;
@@ -251,6 +284,7 @@ p {
 .img-post {
   float: left;
 }
+
 .img-post > img {
   width: 250px;
   height: 100%;
@@ -259,17 +293,20 @@ p {
 .tumnail {
   display: inline;
 }
+
 .tumnail .judul {
   display: block;
   margin: 10px 10px 5px 10px;
   font-size: 24px;
   font-weight: 700;
 }
+
 .tumnail .tanggal {
   display: block;
   font-size: 13px;
   margin-left: 10px;
 }
+
 .tumnail .konten {
   margin: 10px 15px 10px 10px;
   display: block;
@@ -283,62 +320,69 @@ p {
   flex-wrap: nowrap;
   justify-content: flex-end;
 }
+
 .page .num,
 .span {
   padding: 7px 10px 7px 10px;
-  background: #ffffff;
-  border: 1px solid black;
+  background: #fff;
+  border: 1px solid #000;
   margin: -1px;
   text-align: center;
-  color: #000000;
+  color: #000;
 }
+
 .num:hover {
   background: #94e1ec;
   cursor: pointer;
   text-decoration: none;
 }
+
 .num:first-child {
   background-color: #8bd3dd;
 }
+
 .num:first-child:hover {
   background-color: #94e1ec;
 }
+
 .num:last-child {
   background: #faae2b;
 }
+
 .num:last-child:hover {
   background-color: #fcbb4a;
-}
-.num .span {
-  background: #fff;
 }
 
 a {
   color: #277f8b;
   text-decoration: none;
 }
+
 a:hover {
   text-decoration: underline;
 }
 
 .footer {
-  border: 1px solid black;
+  border: 1px solid #000;
   background-color: #fff5f5;
   margin-top: -1px;
 }
+
 .footer-container {
   width: 60%;
   display: flex;
-  /* border: 1px solid black; */
   margin: 15px 0 15px 15px;
 }
+
 .kolom1 {
   width: 50%;
 }
+
 .kolom2 {
   width: 50%;
   margin-left: 20px;
 }
+
 .footer-container .judul {
   font-size: 16px;
 }
@@ -355,6 +399,7 @@ a:hover {
   color: red;
   margin-bottom: 20px;
 }
+
 .komentar {
   margin: 2px 10px 10px 10px;
   display: block;
@@ -373,21 +418,18 @@ ul li {
 }
 
 .copyr {
-  border: 1px solid black;
+  border: 1px solid #000;
   background-color: #5e4d4d;
-  color: white;
+  color: #fff;
   margin: -1px;
   padding: 10px 20px 10px 20px;
-}
-* {
-  box-sizing: border-box;
 }
 
 table.tabel {
   width: 100%;
   margin: auto;
   border-collapse: collapse;
-  border-width: 0px;
+  border-width: 0;
   border-style: solid;
   margin-bottom: 5px;
 }
@@ -395,7 +437,7 @@ table.tabel {
 table.tabel td,
 table.tabel th {
   text-align: left;
-  border-width: 0px;
+  border-width: 0;
   border-style: solid;
   padding: 5px;
 }
@@ -412,7 +454,6 @@ table.tabel th {
     margin-left: auto;
     margin-top: 5px;
   }
-
   .container {
     width: auto;
   }
@@ -430,13 +471,11 @@ table.tabel th {
     margin-left: auto;
     margin-top: 5px;
   }
-
   .container {
     width: auto;
   }
 }
 
-/* Add a black background color to the top navigation */
 nav {
   display: inline;
 }
@@ -448,15 +487,14 @@ nav {
   font-size: 13px;
   font-weight: 700;
   background-color: #fff5f5;
-  border: 1px solid black;
+  border: 1px solid #000;
   position: sticky;
   top: 0;
   z-index: 1;
 }
 
-/* Nav-bar style */
 .nav-bar a {
-  color: black;
+  color: #000;
   cursor: pointer;
   text-align: center;
   padding: 14px 16px;
@@ -464,17 +502,17 @@ nav {
   font-size: 13px;
   flex: auto;
   display: block;
-  border-right: 1px solid black;
+  border-right: 1px solid #000;
 }
 
 .nav-bar a:hover {
   background-color: #ffd388;
-  color: black;
+  color: #000;
 }
 
 .nav-bar a.active {
   background-color: #fff5f5;
-  color: black;
+  color: #000;
   letter-spacing: 0.2em;
   margin-left: 0;
 }
@@ -492,6 +530,7 @@ nav {
 .mySlides {
   display: none;
 }
+
 .mySlides img {
   vertical-align: middle;
   width: 200px;
@@ -499,33 +538,40 @@ nav {
   object-fit: cover;
   border-radius: 15px;
   padding: 2px;
-  border: 1px solid black;
+  border: 1px solid #000;
 }
-/* Slideshow container */
+
 .slideshow-container {
-  width: 850px;
-  /* max-width: 1000px;
-  max-height: 400px; */
+  width: 50%;
   position: relative;
-  margin: auto;
 }
-/* Next & previous buttons */
-.prev,
-.next {
+
+.slide-right {
+  float: right;
+}
+
+.slide-left {
+  text-align: center;
+  float: left;
+  margin-top: 40px;
+}
+
+.next,
+.prev {
   cursor: pointer;
   position: absolute;
   top: 50%;
   width: auto;
   padding: 16px;
   margin-top: -22px;
-  color: white;
-  font-weight: bold;
+  color: #fff;
+  font-weight: 700;
   font-size: 18px;
   transition: 0.6s ease;
   border-radius: 0 3px 3px 0;
   user-select: none;
 }
-/* Position the "next button" to the right */
+
 .next {
   right: 0;
   border-radius: 3px 0 0 3px;
@@ -534,15 +580,15 @@ nav {
 .prev {
   left: 0;
 }
-/* On hover, add a black background color with a little bit seethrough */
-.prev:hover,
-.next:hover {
+
+.next:hover,
+.prev:hover {
   background-color: rgba(160, 241, 178, 0.8);
   text-decoration: none;
 }
-/* Caption text */
+
 .text {
-  color: white;
+  color: #fff;
   background-color: rgba(0, 0, 0, 0.25);
   font-size: 15px;
   padding: 8px 12px;
@@ -550,8 +596,9 @@ nav {
   bottom: 8px;
   width: 100%;
   text-align: center;
+  margin-bottom: 40px;
 }
-/* Number text (1/3 etc) */
+
 .numbertext {
   color: #f2f2f2;
   font-size: 12px;
@@ -559,7 +606,7 @@ nav {
   position: absolute;
   top: 0;
 }
-/* The dots/bullets/indicators */
+
 .dot {
   cursor: pointer;
   height: 10px;
@@ -570,6 +617,7 @@ nav {
   display: inline-block;
   transition: background-color 0.6s ease;
 }
+
 .active,
 .dot:hover {
   background-color: #717171;
@@ -584,28 +632,13 @@ nav {
     display: block;
     margin-right: -2px;
   }
-}
-
-@media screen and (max-width: 600px) {
-  .nav-bar.mquery {
-    display: block;
-  }
-  .nav-bar.mquery a.icon {
-    position: absolute;
-    background-color: #ffc767;
-    right: 0;
-    top: 0;
-  }
-  .nav-bar.mquery a {
-    float: none;
-    margin-right: -2px;
-    display: block;
-    text-align: left;
-  }
-
   .slideshow-container {
     width: auto;
     margin: 2px;
+  }
+  .slide-left,
+  .slide-right {
+    float: none;
   }
 }
 
@@ -613,5 +646,10 @@ nav {
   .slideshow-container {
     width: auto;
     margin: 10px;
+  }
+  .slide-left,
+  .slide-right {
+    float: none;
+    margin-bottom: 20px;
   }
 }
