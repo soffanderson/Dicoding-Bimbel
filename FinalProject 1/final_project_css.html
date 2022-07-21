@@ -31,6 +31,18 @@
                     <a href="#home" class="active">SOFFAN</a>
                     <a href="#news">Artikel</a>
                     <a href="#contact">Unduh</a>
+                    <div class="absolute">
+                        <a class="dropdown dropbtn" onclick="myFunction()">Dropdown
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                        <div class="dropdown-content" id="myDropdown">
+                            <a href="#">Link 1</a>
+                            <a href="#">Link 2</a>
+                            <a href="#">Link 3</a>
+                        </div>
+                    </div>
+
+
                     <a href="#about">Profile</a>
                     <a href="#about">Kontak</a>
                     <a href="#about" class="login">LOGIN</a>
@@ -364,6 +376,24 @@
             }
             slides[slideIndex - 1].style.display = "block";
             dots[slideIndex - 1].className += " active";
+        }
+    </script>
+
+    <script>
+        /* When the user clicks on the button, 
+        toggle between hiding and showing the dropdown content */
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function (e) {
+            if (!e.target.matches('.dropbtn')) {
+                var myDropdown = document.getElementById("myDropdown");
+                if (myDropdown.classList.contains('show')) {
+                    myDropdown.classList.remove('show');
+                }
+            }
         }
     </script>
 
