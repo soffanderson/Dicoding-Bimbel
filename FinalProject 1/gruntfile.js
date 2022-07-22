@@ -2,12 +2,12 @@ module.exports = function (grunt) {
   grunt.initConfig({
     uncss: {
       dist: {
-        files: [{ src: "final_project_css.html", dest: "style.css" }],
+        files: [{ src: "index.html", dest: "assets/css/style.css" }],
       },
     },
     cssmin: {
       dist: {
-        files: [{ src: "style.css", dest: "style.css" }],
+        files: [{ src: "assets/css/style.css", dest: "assets/css/style.css" }],
       },
     },
   });
