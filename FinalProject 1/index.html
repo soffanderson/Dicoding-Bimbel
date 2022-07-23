@@ -5,15 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
     </style>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
@@ -29,10 +27,10 @@
             <nav>
                 <div class="nav-bar" id="nav-container">
                     <a href="#home" class="active">SOFFAN</a>
-                    <a href="#news">Artikel</a>
-                    <a href="#contact">Unduh</a>
+                    <a href="#content">Artikel</a>
+                    <a href="#unduh">Unduh</a>
                     <a href="#about">Profile</a>
-                    <a href="#about">Kontak</a>
+                    <a href="#komentar">Komentar</a>
                     <a href="#about" class="login">LOGIN</a>
                     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
                         <i class="fa fa-bars"></i>
@@ -44,7 +42,7 @@
 
             <!-- SEARCH -->
             <div class="nav-search">
-                <div class="jam"><span id="jam"></span>:<span id="menit"></span></div>
+                <div class="jam"><span id="jam"></span></div>
 
                 <div class="marquee">
                     Selamat datang, <br><span id="nama">Bro.</span>
@@ -100,22 +98,30 @@
                 <article>
                     <div class="post">
                         <div class="img-post">
-                            <img src="https://s3-alpha-sig.figma.com/img/66b2/c3db/1a1f84166ab857d2befd25b214519e7a?Expires=1649030400&Signature=djy4I1S9CCPPhqw49n2gT2G2bQBWLLHaAHQLCk2Nlm6dLCGtvDFXebfYZ0YZCyeC92O6O-69LTuAhJAm1YQYIemNMLAscPAG6CcjK8ZZIbGwvGxdCeVvaSeAv4Gkeg1fjz0tR8dp9XbEhd1RshNbUQ5SjRK3CeQoLjJByERgViPmwBUe7uAzB8UKXmBucZqqIGUUmmujUxPI8trC-KpEeH6KE1-nArPEIXRK-WpTbwAmXFviBru7w94v~pmIvgjCNRsLWN20zVSPpWZqys4HVSPcItLgmXNBZPqbFUJCdeCb8Q7EnXCAZdGF0kZD8BBQtW~YCMdS4PoOLzhBL9lsBQ__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
-                                alt="">
+                            <img src="assets/images/memory.jpg" alt="">
                         </div>
                         <div class="tumnail">
                             <span class="judul">
-                                Paradis di Indonesia
+                                Lima Tahun Yang Terlupa
                             </span>
                             <span class="tanggal">2022, 1 Maret</span>
                             <span class="konten">
-                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt quaerat,
-                                earum
-                                iure
-                                excepturi
-                                quas quisquam ut odit doloremque quo nobis deserunt tempora itaque quibusdam
-                                soluta
-                                velit<br><br>
+                                5 tahun yang terlupa - Ya.. akhirnya gue sadar sudah banyak yang gue lupakan selama 5
+                                tahun belakangan ini, yg juga menyangkut kenangan masa kecilku juga. Kembali ke 5 tahun
+                                sebelumnya dimana gue masuk kedalam dunia yang bertolak belakang terhadap kehidupan luar
+                                yang liar, dunia yang hanya diisi dengan kegiatan yang membosakan namum berkesan, tempat
+                                dimana jati diri di bentuk, tempat yang bisanya disebut sebagai "penjara suci"... ya..
+                                Pesantren..
+
+                                Setelah lulus dari sekolah dasar, gue masuk ke pesantren untuk menempuh pendidikan di
+                                bawah naungan iman, dimana disana bukan saja dididik mengenai pelajaran tapi juga
+                                dididik soal agama. Hidup di pesantren susah-susah gampang, kita hanya mengikuti aturan
+                                dan dengan begitu kita akan hidup didalamnya dengan nyaman, tapi.. mengikuti aturan tak
+                                segampang yang kalian pikirkan.. banyak peraturan yang bertentangn dengan kehendak kita
+                                sebagai manusia yang haus akan kebebasan.. pola pikir kita yang masih muda (anak-anak)
+                                yang ingin tahu segala hal berubaha menjadi sifat perlawanan akan keingintahuan,
+                                pengekangan yang dilakukan yg bertujuan baik untuk kita di bantah atau
+                                dilanggar....<br><br>
                                 <a href="">Baca Selengkapnya >></a>
                             </span>
                         </div>
@@ -125,76 +131,31 @@
                 <article>
                     <div class="post">
                         <div class="img-post">
-                            <img src="https://s3-alpha-sig.figma.com/img/1ad0/8cfd/0c6e5f6287c8d0f4ac5bcae5c6758542?Expires=1649030400&Signature=YeeMbk1FU4Z0frUK49TlQHH884LMqyZJbfq7T7jW0Hstp89ddkYbraoEBarqjTAOeMm1KPhqU5~~RoRhkRbVP~xcOYrtwpz0vF9ts0zfCOtPxjnDJ1-Hks9lOe1NDnjj-7UWLqoOhlX61o0e1u4WI1pUG0LdbKRc7lG8tmyxJSLUSPa3rPRrHKiWh3EOPq5UtERNSezX7gnNG8LTNjnP4L1LsUeXtS-ylmXwtFEHqsW5VwRJqpIlo5WtMuzpseQ5TNol1DwH6UHHjozVOm-yLHiP1Hrw87DmXgpZRmtRYthl5LMnXLLhvDaNoI~LHlgxJ4cGBp9ov7W6rx3O8xRlEg__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
-                                alt="">
+                            <img src="assets/images/5428471886_d350662696_z_large.jpg" alt="">
                         </div>
                         <div class="tumnail">
                             <span class="judul">
-                                Paradis di Indonesia
+                                Wanita & Perjuangan
                             </span>
-                            <span class="tanggal">2022, 1 Maret</span>
+                            <span class="tanggal">2022, 30 Februari</span>
                             <span class="konten">
-                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt quaerat,
-                                earum
-                                iure
-                                excepturi
-                                quas quisquam ut odit doloremque quo nobis deserunt tempora itaque quibusdam
-                                soluta
-                                velit<br><br>
+                                Assalamuaikum, wr wb..
+                                Gue pernah baca sebuah artikel di internet yang menceritakan tetang seorang cowok yang
+                                berusaha mati-matian berjuang untuk cinta yaitu pacarnya sendiri. Dia rela berangkat
+                                pagi hari menuju tempat ceweknya tinggal, tempatnya sangat jauh sekitar 1 jam perjalanan
+                                hanya untuk bertemu saja dan dia melakukan itu bukan cuma sekali tapi hampir setiap
+                                hari. Rasa cintanya yg bergitu besar tak membuat jarak yang terbentang menghalanginya.
+
+                                Hingga pada suatu hari ketika sang cowok telah menjumpai ceweknya dan hendak kembali
+                                pulang ke tempat tinggalnya, ban sepeda motor si cowok bocor padahal perjalanan msh
+                                sangat jauh. Si cowok pun mencari tukang tambal ban di dekat sana tetapi dia baru
+                                menyadari bahwa dia tidak memiliki uang lagi karena dihabis...<br><br>
                                 <a href="">Baca Selengkapnya >></a>
                             </span>
                         </div>
                     </div>
                 </article>
 
-                <article>
-                    <div class="post">
-                        <div class="img-post">
-                            <img src="https://s3-alpha-sig.figma.com/img/e20a/5d81/a120152dbd8f57317250d7d4612872b1?Expires=1649030400&Signature=Xygg-vA--gi-sH3bOZtTktsaLNgEObd5msaYaU2g9LapyVUy759MSgogKN-6mnIJHucSkafpFzsI-6fze3KxzsMs0bByu7JN4fC8~iooJIzHgTvzr6RJxxaQq~foV-1RVFo679FPnWzj5mjz7K~e~GOvrBQi9B6sdc6NU0kFGuMoEHffFevjiQh1d5kOwlX0Fkg92cr7lxG911ne4yta3gwVZvZRD-DdjrL2mQkpAkNvMARRS1wPCNQ217aLt2nQQdOEbGElXyQvLf~fWyrfRK13KeUt-FnQslSEfnPQSAq-9-0WEf6Qdc8~kqm6OUj6MIz3NapYC9XxgUl-ZZfETQ__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
-                                alt="">
-                        </div>
-                        <div class="tumnail">
-                            <span class="judul">
-                                Paradis di Indonesia
-                            </span>
-                            <span class="tanggal">2022, 1 Maret</span>
-                            <span class="konten">
-                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt quaerat,
-                                earum
-                                iure
-                                excepturi
-                                quas quisquam ut odit doloremque quo nobis deserunt tempora itaque quibusdam
-                                soluta
-                                velit<br><br>
-                                <a href="">Baca Selengkapnya >></a>
-                            </span>
-                        </div>
-                    </div>
-                </article>
-
-                <article>
-                    <div class="post">
-                        <div class="img-post">
-                            <img src="https://s3-alpha-sig.figma.com/img/e773/2eb4/5fe1d9c728f85947366fe1b327faf8b5?Expires=1649030400&Signature=c2a8aU5QOSZSZxP0WQUXxqCKzTSwFPd2pUCrrHCwuGoKnQS~DFdK6VLFA7FJSyIv3fmdRukacsttJVDRcK72RBzgyhVZlJl3TgLeYFiHE0RiG1tpK4IBweCzgnhm2vyTYo4RJ05mfSsnBhrtyyJZj7NSs~f~WBQ9R2wyL0YlCIIg99HJ43W2VqQcB41J7Wm553BXO~AkkjL5nPtsUYeKiW~fjTpQOWjodKBrO81xi3PBvXhfuGb4wo0-i8n2~ks24Tiszwqnqm~lGTREhBtz7zoEEQy21UDdQZQFpijgYfphZ1s8HJIhdwlKCVPSbB5xK7R7H4qPADnCcyHcSdCOcA__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
-                                alt="">
-                        </div>
-                        <div class="tumnail">
-                            <span class="judul">
-                                Paradis di Indonesia
-                            </span>
-                            <span class="tanggal">2022, 1 Maret</span>
-                            <span class="konten">
-                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt quaerat,
-                                earum
-                                iure
-                                excepturi
-                                quas quisquam ut odit doloremque quo nobis deserunt tempora itaque quibusdam
-                                soluta
-                                velit<br><br>
-                                <a href="">Baca Selengkapnya >></a>
-                            </span>
-                        </div>
-                </article>
                 <!-- Page Halaman -->
                 <div class="page">
                     <a class="num">1</a>
@@ -207,7 +168,7 @@
 
             <!-- Aside -->
             <aside>
-                <div class="profile">
+                <div class="profile" id="about">
                     <h2>Profile</h2>
                     <br>
                     <img src="assets/images/profile.jpg" class="foto" alt="">
@@ -259,7 +220,7 @@
             <div class="footer">
                 <div class="footer-container">
                     <!-- Komentar -->
-                    <div class="kolom1">
+                    <div class="kolom1" id="komentar">
                         <div class="tumnail">
                             <span class="judul">
                                 Komentar
@@ -269,19 +230,19 @@
                             <span class="tanggal">2022, 1 Maret</span>
                             <span class="komentar">
                                 <b>Andrean:</b>
-                                Lorem, ipsum dolor sit amet consectetur adipisicing elit...
+                                Wah sangat menginspirasi banget kak, semoga ane bisa...
                                 <span><a href="http://">Lihat >></a></span>
                             </span>
                             <span class="tanggal">2022, 1 Maret</span>
                             <span class="komentar">
-                                <b>Andrean:</b>
-                                Lorem, ipsum dolor sit amet consectetur adipisicing elit...
+                                <b>John:</b>
+                                Nice artikel kak, jadi betah mampir disini, oh iya kak,...
                                 <span><a href="http://">Lihat >></a></span>
                             </span>
                             <span class="tanggal">2022, 1 Maret</span>
                             <span class="komentar">
-                                <b>Andrean:</b>
-                                Lorem, ipsum dolor sit amet consectetur adipisicing elit...
+                                <b>Siti:</b>
+                                Kak, nanti mampir ke blog aku juga yaa...
                                 <span><a href="http://">Lihat >></a></span>
                             </span>
                             <!-- End -->
@@ -290,7 +251,7 @@
                     <!-- End Komentar -->
 
                     <!-- Download -->
-                    <div class="kolom2">
+                    <div class="kolom2" id="unduh">
                         <div class="tumnail">
                             <span class="judul">
                                 Download
@@ -298,9 +259,9 @@
                             <hr color="red" style="width: 50px;">
                             <!-- Mulai -->
                             <ul>
-                                <li>eBook</li>
-                                <li>Poster</li>
-                                <li>Kalender</li>
+                                <li><a href="/">eBooks</a></li>
+                                <li><a href="/">Poster</a></li>
+                                <li><a href="/">Kalender</a></li>
                             </ul>
                             <!-- End -->
                         </div>
@@ -309,7 +270,7 @@
                 </div>
                 <div class="copyr">
                     © Copyright 2022, All Rights Reserved | Made with <img width="13" alt="Love Heart symbol"
-                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Love_Heart_symbol.svg/32px-Love_Heart_symbol.svg.png">
+                        src="assets/images/Love_Heart_symbol.svg.png">
                     By Soffan
                 </div>
         </footer>

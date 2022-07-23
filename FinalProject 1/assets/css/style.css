@@ -255,6 +255,7 @@ aside {
 }
 
 .profile {
+  scroll-margin: 120px 0 0 50px;
   border: 1px solid #000;
   background-color: #cbf7ff;
   text-align: center;
@@ -276,7 +277,7 @@ p {
 }
 
 .post {
-  display: flex;
+  /* display: flex; */
   padding: 5px;
   margin: 10px 10px 0 10px;
 }
@@ -287,7 +288,10 @@ p {
 
 .img-post > img {
   width: 250px;
-  height: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  margin-right: 15px;
+  margin-bottom: 5px;
 }
 
 .tumnail {
@@ -296,7 +300,7 @@ p {
 
 .tumnail .judul {
   display: block;
-  margin: 10px 10px 5px 10px;
+  margin: 10px 15px 10px 0;
   font-size: 24px;
   font-weight: 700;
 }
@@ -304,11 +308,11 @@ p {
 .tumnail .tanggal {
   display: block;
   font-size: 13px;
-  margin-left: 10px;
+  margin-left: 0;
 }
 
 .tumnail .konten {
-  margin: 10px 15px 10px 10px;
+  margin: 10px 15px 10px 0;
   display: block;
   font-size: 15px;
   color: #585858;
@@ -651,6 +655,17 @@ nav {
   .slideshow-container {
     width: 100%;
     margin: 2px;
+  }
+
+  .img-post {
+    display: block;
+  }
+
+  .img-post > img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    object-position: center;
   }
 }
 @media screen and (max-width: 525px) {
