@@ -1,0 +1,14 @@
+{
+  "name": "javascript-dasar",
+  "version": "1.0.0",
+  "description": "",
+  "main": "1-asyncronous.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "soffan",
+  "license": "ISC",
+  "devDependencies": {
+    "lodash": "^4.17.21"
+  }
+}
