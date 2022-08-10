@@ -3,7 +3,6 @@
 
 <head>
     <title>Event World</title>
-
     <style>
         .contents {
             position: fixed;
@@ -22,26 +21,16 @@
     </style>
 </head>
 
-<body onload="welcome()">
+<body>
     <div class="contents" align="center" hidden>
-        <button id="incrementButton" onclick="increment()">Tekan Aku :)</button>
+        <button id="incrementButton">Tekan Aku :)</button>
         <h3>Kamu sudah menekan tombol di atas sebanyak <span id="count">0</span></h3>
     </div>
 
     <script>
-        // Kode JavaScript kita
-        function welcome() {
-            alert('Sim salabim muncullah elemen-elemen HTML!');
-            const contents = document.querySelector('.contents');
-            contents.removeAttribute('hidden');
-        }
-
-        // document.body.onload = welcome;
-
         function increment() {
             document.getElementById('count').innerText++;
 
-            // suprise ketika 7x menekan tombol
             if (document.getElementById('count').innerText == 7) {
                 const hiddenMessage = document.createElement('h4');
                 hiddenMessage.innerText = 'Selamat! Anda menemukan hadiah tersembunyi...';
@@ -54,7 +43,15 @@
             }
         }
 
-        // document.getElementById('incrementButton').onclick = increment; 
+        function welcome() {
+            alert('Sim salabim muncullah elemen-elemen HTML!');
+            const contents = document.querySelector('.contents');
+            contents.removeAttribute('hidden');
+        }
+
+        // kita akan menulis kode menggunakan addEventListener di sini
+        window.addEventListener('load', welcome);
+        document.getElementById('incrementButton').addEventListener('click', increment);
     </script>
 </body>
 
