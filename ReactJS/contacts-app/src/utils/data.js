@@ -16,7 +16,7 @@ const getData = () => {
       id: 3,
       name: "Rahmat Fajri",
       tag: "rfajri127",
-      imageUrl: "/images/rfajri127.jpeg",
+      imageUrl: "/images/rfajri27.jpeg",
     },
   ];
 };
