@@ -2,7 +2,7 @@ import React from "react";
 
 function ArchiveButton({ id, onArchive }) {
   return (
-    <button className="btn btn-secondary" onClick={() => onArchive(id)}>
+    <button className="btn btn-warning" onClick={() => onArchive(id)}>
       Archive
     </button>
   );
