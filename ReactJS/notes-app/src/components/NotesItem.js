@@ -3,7 +3,15 @@ import NotesBody from "./NotesBody";
 import ArchiveButton from "./ArchiveButton";
 import DeleteButton from "./DeleteButton";
 
-function NotesItem({ title, body, createdAt, id, onDelete, onArchive }) {
+function NotesItem({
+  title,
+  archived,
+  body,
+  createdAt,
+  id,
+  onDelete,
+  onArchive,
+}) {
   const divStyle = {
     width: "18rem",
   };
@@ -12,7 +20,7 @@ function NotesItem({ title, body, createdAt, id, onDelete, onArchive }) {
     <div className="card m-2 bg-dark text-white" style={divStyle}>
       <NotesBody title={title} body={body} createdAt={createdAt} />
       <div className="card-footer">
-        <ArchiveButton id={id} onArchive={onArchive} />
+        <ArchiveButton id={id} archived={archived} onArchive={onArchive} />
         <DeleteButton id={id} onDelete={onDelete} />
       </div>
     </div>

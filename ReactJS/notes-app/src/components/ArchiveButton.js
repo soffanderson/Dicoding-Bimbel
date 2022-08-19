@@ -1,9 +1,9 @@
 import React from "react";
 
-function ArchiveButton({ id, onArchive }) {
+function ArchiveButton({ id, archived, onArchive }) {
   return (
     <button className="btn btn-warning" onClick={() => onArchive(id)}>
-      Archive
+      {archived === false ? "Archive" : "Pindahkan"}
     </button>
   );
 }
