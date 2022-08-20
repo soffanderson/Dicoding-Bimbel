@@ -13,7 +13,7 @@ function NotesItem({
   onArchive,
 }) {
   const divStyle = {
-    width: "18rem",
+    width: "20rem",
   };
 
   return (

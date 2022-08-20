@@ -2,6 +2,7 @@ import React from "react";
 import NotesList from "./NotesList";
 import { getInitialData } from "./dataAll";
 import NotesInput from "./NotesInput";
+import Navigation from "./Navigation";
 
 class NotesApp extends React.Component {
   constructor(props) {
@@ -53,19 +54,24 @@ class NotesApp extends React.Component {
 
   render() {
     return (
-      <div className="container">
-        <div className="col">
-          <div className="row d-flex justify-content-center p-3">
-            <h1>Notes App by Soffan</h1>
-          </div>
-
-          <div className="row bg-light shadow p-3 mb-5 bg-body rounded d-flex justify-content-center mt-n0">
-            <div className="col">
+      <>
+        <header className="mb-5 sticky-top">
+          <Navigation />
+        </header>
+        <div className="container">
+          <div className="text-light bg-dark shadow row p-3 mb-5 bg-body rounded d-flex mt-n0">
+            <div className="col-6">
               <div className="col p-3">
-                <h1 className="text-center">Tambah Catatan</h1>
+                <h2 className="text-center">Tambah Catatan</h2>
               </div>
               <div className="col mb-3">
                 <NotesInput addNote={this.onAddNoteHandler} />
+              </div>
+            </div>
+            <div className="col-6 d-flex align-items-center">
+              <div className="col text-center">
+                <h1 class="display-5">Cegah lupa ?</h1>
+                <p class="lead">Catat, Simpan, Buka kapan saja dimana saja!</p>
               </div>
             </div>
           </div>
@@ -104,7 +110,7 @@ class NotesApp extends React.Component {
             </div>
           </div>
         </div>
-      </div>
+      </>
     );
   }
 }
