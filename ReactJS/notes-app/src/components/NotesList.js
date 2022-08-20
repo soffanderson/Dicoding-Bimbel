@@ -2,7 +2,7 @@ import React from "react";
 import NotesItem from "./NotesItem";
 
 function NotesList({ notes, onArchive, onDelete }) {
-  return (
+  return notes.length > 0 ? (
     <div className="d-flex flex-wrap align-content-stretch ">
       {notes.map((note) => (
         <NotesItem
@@ -14,6 +14,8 @@ function NotesList({ notes, onArchive, onDelete }) {
         />
       ))}
     </div>
+  ) : (
+    <p className="text-center">Tidak ada catatan</p>
   );
 }
 
