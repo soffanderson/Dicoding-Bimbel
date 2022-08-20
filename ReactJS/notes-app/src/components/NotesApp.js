@@ -24,7 +24,7 @@ class NotesApp extends React.Component {
             id: "id-" + new Date().getTime(),
             title,
             body,
-            createdAt: new Date().toISOString(),
+            createdAt: new Date(),
             archived: false,
           },
           ...prevState.notes,
@@ -93,7 +93,7 @@ class NotesApp extends React.Component {
             </div>
           </div>
 
-          <div className="row bg-light shadow p-3 mb-5 bg-body rounded d-flex justify-content-center mt-n0">
+          <div className="row bg-light border-warning shadow p-3 mb-5 bg-body rounded d-flex justify-content-center mt-n0">
             <div className="col">
               <div className="col p-3">
                 <h1 className="text-center">Catatan Archived</h1>

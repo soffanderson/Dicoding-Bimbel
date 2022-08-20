@@ -7,6 +7,7 @@ class NotesInput extends React.Component {
     this.state = {
       title: "",
       body: "",
+      sisa: 50,
     };
 
     this.onTitleChangeEventHandler = this.onTitleChangeEventHandler.bind(this);
@@ -15,9 +16,14 @@ class NotesInput extends React.Component {
   }
 
   onTitleChangeEventHandler(event) {
+    const limit = 50;
+    const titleLimit = event.target.value.slice(0, limit);
+    const sisaTitle = titleLimit.length;
+
     this.setState(() => {
       return {
-        title: event.target.value,
+        title: titleLimit,
+        sisa: limit - sisaTitle,
       };
     });
   }
@@ -36,6 +42,21 @@ class NotesInput extends React.Component {
   }
 
   render() {
+    const sisaTampil = this.state.sisa;
+    const sisaHabis = sisaTampil === 0 ? "habis" : sisaTampil;
+    let button;
+
+    if (sisaTampil !== 50) {
+      button = (
+        <div className="badge">
+          Sisa Karakter:
+          <span className="badge bg-danger mx-1">{sisaHabis}</span>
+        </div>
+      );
+    } else {
+      button = null;
+    }
+
     return (
       <form onSubmit={this.onSubmitEventHandler}>
         <div className="mb-3">
@@ -49,6 +70,7 @@ class NotesInput extends React.Component {
             value={this.state.title}
             onChange={this.onTitleChangeEventHandler}
           />
+          {button}
         </div>
         <div className="mb-3">
           <label for="exampleFormControlTextarea1" className="form-label">
