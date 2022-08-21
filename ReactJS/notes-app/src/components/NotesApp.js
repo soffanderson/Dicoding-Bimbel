@@ -9,11 +9,21 @@ class NotesApp extends React.Component {
     super(props);
     this.state = {
       notes: getInitialData(),
+      search: "",
     };
 
     this.onDeleteHandler = this.onDeleteHandler.bind(this);
     this.onArchiveHandler = this.onArchiveHandler.bind(this);
     this.onAddNoteHandler = this.onAddNoteHandler.bind(this);
+    this.onNotesSearchHandeler = this.onNotesSearchHandeler.bind(this);
+  }
+
+  onNotesSearchHandeler(event) {
+    this.setState(() => {
+      return {
+        search: event.target.value,
+      };
+    });
   }
 
   onAddNoteHandler({ title, body }) {
@@ -53,14 +63,23 @@ class NotesApp extends React.Component {
   }
 
   render() {
+    const search = this.state.notes.filter((note) =>
+      note.title.toLowerCase().includes(this.state.search.toLowerCase())
+    );
     return (
       <>
         <header className="mb-5 sticky-top">
-          <Navigation />
+          <Navigation
+            value={this.state.search}
+            onChange={this.onNotesSearchHandeler}
+          />
         </header>
         <div className="container">
-          <div className="text-light bg-dark shadow row p-3 mb-5 bg-body rounded d-flex mt-n0">
-            <div className="col-6">
+          <div
+            id="buat"
+            className="text-light bg-dark shadow row p-3 mb-5 bg-body rounded d-flex mt-n0"
+          >
+            <div className="col-md-6">
               <div className="col p-3">
                 <h2 className="text-center">Tambah Catatan</h2>
               </div>
@@ -68,7 +87,7 @@ class NotesApp extends React.Component {
                 <NotesInput addNote={this.onAddNoteHandler} />
               </div>
             </div>
-            <div className="col-6 d-flex align-items-center">
+            <div className="col-md-6 d-flex align-items-center">
               <div className="col text-center">
                 <h1 class="display-5">Cegah lupa ?</h1>
                 <p class="lead">Catat, Simpan, Buka kapan saja dimana saja!</p>
@@ -76,16 +95,17 @@ class NotesApp extends React.Component {
             </div>
           </div>
 
-          <div className="row bg-light shadow p-3 mb-5 bg-body rounded d-flex justify-content-center mt-n0">
+          <div
+            id="aktif"
+            className="row bg-light shadow p-3 mb-5 bg-body rounded d-flex justify-content-center mt-n0"
+          >
             <div className="col">
               <div className="col p-3">
                 <h1 className="text-center">Catatan Aktif</h1>
               </div>
               <div className="col mb-3">
                 <NotesList
-                  notes={this.state.notes.filter(
-                    (note) => note.archived === false
-                  )}
+                  notes={search.filter((note) => note.archived === false)}
                   onArchive={this.onArchiveHandler}
                   onDelete={this.onDeleteHandler}
                 />
@@ -93,16 +113,17 @@ class NotesApp extends React.Component {
             </div>
           </div>
 
-          <div className="row bg-light border-warning shadow p-3 mb-5 bg-body rounded d-flex justify-content-center mt-n0">
+          <div
+            id="arsip"
+            className="row bg-light border-warning shadow p-3 mb-5 bg-body rounded d-flex justify-content-center mt-n0"
+          >
             <div className="col">
               <div className="col p-3">
                 <h1 className="text-center">Catatan Archived</h1>
               </div>
               <div className="col mb-3">
                 <NotesList
-                  notes={this.state.notes.filter(
-                    (note) => note.archived !== false
-                  )}
+                  notes={search.filter((note) => note.archived !== false)}
                   onArchive={this.onArchiveHandler}
                   onDelete={this.onDeleteHandler}
                 />
