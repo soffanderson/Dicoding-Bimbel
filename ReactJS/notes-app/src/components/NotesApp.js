@@ -3,6 +3,7 @@ import NotesList from "./NotesList";
 import { getInitialData } from "./dataAll";
 import NotesInput from "./NotesInput";
 import Navigation from "./Navigation";
+import "../App.css";
 
 class NotesApp extends React.Component {
   constructor(props) {
@@ -75,10 +76,8 @@ class NotesApp extends React.Component {
           />
         </header>
         <div className="container">
-          <div
-            id="buat"
-            className="text-light bg-dark shadow row p-3 mb-5 bg-body rounded d-flex mt-n0"
-          >
+          <div className="text-light bg-dark shadow row p-3 mb-5 bg-body rounded d-flex mt-n0">
+            <span class="anchor" id="buat"></span>
             <div className="col-md-6">
               <div className="col p-3">
                 <h2 className="text-center">Tambah Catatan</h2>
@@ -95,10 +94,8 @@ class NotesApp extends React.Component {
             </div>
           </div>
 
-          <div
-            id="aktif"
-            className="row bg-light shadow p-3 mb-5 bg-body rounded d-flex justify-content-center mt-n0"
-          >
+          <div className="row bg-light shadow p-3 mb-5 bg-body rounded d-flex justify-content-center mt-n0">
+            <span class="anchor" id="aktif"></span>
             <div className="col">
               <div className="col p-3">
                 <h1 className="text-center">Catatan Aktif</h1>
@@ -113,13 +110,11 @@ class NotesApp extends React.Component {
             </div>
           </div>
 
-          <div
-            id="arsip"
-            className="row bg-light border-warning shadow p-3 mb-5 bg-body rounded d-flex justify-content-center mt-n0"
-          >
+          <div className="row bg-light border-warning shadow p-3 mb-5 bg-body rounded d-flex justify-content-center mt-n0">
+            <span class="anchor" id="arsip"></span>
             <div className="col">
               <div className="col p-3">
-                <h1 className="text-center">Catatan Archived</h1>
+                <h1 className="text-center">Catatan Arsip</h1>
               </div>
               <div className="col mb-3">
                 <NotesList
