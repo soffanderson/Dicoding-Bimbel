@@ -3,7 +3,8 @@ import NotesList from "./NotesList";
 import { getInitialData } from "./dataAll";
 import NotesInput from "./NotesInput";
 import Navigation from "./Navigation";
-import "../App.css";
+import NotesWelcome from "./NoteWelcome";
+import "../css/App.css";
 
 class NotesApp extends React.Component {
   constructor(props) {
@@ -77,21 +78,8 @@ class NotesApp extends React.Component {
         </header>
         <div className="container">
           <div className="text-light bg-dark shadow row p-3 mb-5 bg-body rounded d-flex mt-n0">
-            <span class="anchor" id="buat"></span>
-            <div className="col-md-6">
-              <div className="col p-3">
-                <h2 className="text-center">Tambah Catatan</h2>
-              </div>
-              <div className="col mb-3">
-                <NotesInput addNote={this.onAddNoteHandler} />
-              </div>
-            </div>
-            <div className="col-md-6 d-flex align-items-center">
-              <div className="col text-center">
-                <h1 class="display-5">Cegah lupa ?</h1>
-                <p class="lead">Catat, Simpan, Buka kapan saja dimana saja!</p>
-              </div>
-            </div>
+            <NotesInput addNote={this.onAddNoteHandler} />
+            <NotesWelcome />
           </div>
 
           <div className="row bg-light shadow p-3 mb-5 bg-body rounded d-flex justify-content-center mt-n0">

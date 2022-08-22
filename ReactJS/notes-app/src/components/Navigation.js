@@ -1,5 +1,5 @@
 import React from "react";
-import MyImage from "../note-svgrepo-com.svg";
+import MyImage from "../images/note-svgrepo-com.svg";
 
 function Navigation({ value, onChange }) {
   return (
