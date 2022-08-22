@@ -45,7 +45,6 @@ class NotesApp extends React.Component {
       };
     });
     swal("Berhasil!", "Catatan telah ditambahkan", "success").then(function () {
-      // Redirect the user
       window.location.href = "/#aktif";
     });
   }
