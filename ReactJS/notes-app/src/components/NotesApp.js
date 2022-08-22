@@ -4,6 +4,7 @@ import { getInitialData } from "./dataAll";
 import NotesInput from "./NotesInput";
 import Navigation from "./Navigation";
 import NotesWelcome from "./NoteWelcome";
+import swal from "sweetalert";
 import "../css/App.css";
 
 class NotesApp extends React.Component {
@@ -42,6 +43,10 @@ class NotesApp extends React.Component {
           ...prevState.notes,
         ],
       };
+    });
+    swal("Berhasil!", "Catatan telah ditambahkan", "success").then(function () {
+      // Redirect the user
+      window.location.href = "/#aktif";
     });
   }
 

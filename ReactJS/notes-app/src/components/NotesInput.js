@@ -76,6 +76,7 @@ class NotesInput extends React.Component {
                   placeholder="name@example.com"
                   value={this.state.title}
                   onChange={this.onTitleChangeEventHandler}
+                  required
                 />
                 {button}
               </div>
@@ -88,6 +89,7 @@ class NotesInput extends React.Component {
                   rows="4"
                   value={this.state.body}
                   onChange={this.onBodyChangeEventHandler}
+                  required
                 ></textarea>
               </div>
               <button type="submit" className="btn btn-primary">
