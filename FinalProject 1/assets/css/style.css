@@ -388,7 +388,6 @@ button {
     font-size: 13px;
     flex: auto;
     display: block;
-    border-right: 1px solid #000;
 }
 
 .nav-bar a:hover {
