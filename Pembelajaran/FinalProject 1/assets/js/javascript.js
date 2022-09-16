@@ -9,12 +9,15 @@ function myFunction() {
 
 let slideIndex = 1;
 showSlides(slideIndex);
+
 function plusSlides(n) {
     showSlides((slideIndex += n));
 }
+
 function currentSlide(n) {
     showSlides((slideIndex = n));
 }
+
 function showSlides(n) {
     let i;
     const slides = document.getElementsByClassName("mySlides");
@@ -35,14 +38,22 @@ function showSlides(n) {
     dots[slideIndex - 1].className += " active";
 }
 
-const changeName = document.getElementById("nama");
-const firstName = prompt("Siapa namamu ?");
+function namaTamu() {
+    const changeName = document.getElementById("nama");
+    const firstName = prompt("Siapa namamu ?");
 
-const user = {
-    name: firstName,
-};
+    const user = {
+        name: firstName,
+    };
 
-changeName.innerHTML = "<strong>" + user.name + ".</strong>";
+    if (user.name === null) {
+        changeName.innerHTML = "<strong>Bro.</strong>";
+    } else {
+        changeName.innerHTML = "<strong>" + user.name + ".</strong>";
+    }
+}
+
+namaTamu();
 
 const currentTime = () => {
     const el = document.getElementById("jam");
