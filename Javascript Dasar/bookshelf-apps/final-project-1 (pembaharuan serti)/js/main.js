@@ -218,12 +218,10 @@ function isStorageExist() {
 
 document.addEventListener(SUDAH_BACA, function () {
     alert("Buku selesai dibaca!");
-    console.log(localStorage.getItem(BOOK_STORAGE_KEY));
 });
 
 document.addEventListener(BELUM_BACA, function () {
     alert("Buku belum dibaca!");
-    console.log(localStorage.getItem(BOOK_STORAGE_KEY));
 });
 
 function loadDataFromStorage() {
