@@ -7,18 +7,22 @@ const requestListener = (request, response) => {
         response.end("Hello from GET!");
     }
     if (method === "POST") {
-        response.end("Hello from POST!");
-    }
-    if (method === "PUT") {
-        response.end("Hello from PUT!");
-    }
-    if (method === "DELETE") {
-        response.end("Hello from DELETE!");
+        let body = [];
+
+        request.on("data", (chunk) => {
+            body.push(chunk);
+        });
+
+        request.on("end", () => {
+            body = Buffer.concat(body).toString();
+            const { name } = JSON.parse(body);
+            response.end(`<h1>Hello, ${name}</h1>`);
+        });
     }
 
     response.setHeader("Content-Type", "text/html");
     response.statusCode = 200;
-    response.end("<h1>Hello HTTP Server!</h1>");
+    // response.end("<h1>Hello HTTP Server!</h1>");
 };
 
 const server = http.createServer(requestListener);
