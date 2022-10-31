@@ -9,17 +9,17 @@ const requestListener = (request, response) => {
     if (url === "/") {
         if (method === "GET") {
             response.statusCode = 200;
-            response.end("Ini adalah homepage.");
+            response.end("<h1>Ini adalah homepage.</h1>");
         } else {
             response.statusCode = 400;
             response.end(
-                `Halaman tidak dapat diakses dengan ${method} method.`
+                `<h1>Halaman tidak dapat diakses dengan ${method} method.</h1>`
             );
         }
     } else if (url === "/about") {
         if (method === "GET") {
             response.statusCode = 200;
-            response.end("Ini adalah halaman about.");
+            response.end("<h1>Ini adalah halaman about.</h1>");
         } else if (method === "POST") {
             let body = [];
 
@@ -38,7 +38,7 @@ const requestListener = (request, response) => {
         } else {
             response.statusCode = 400;
             response.end(
-                `Halaman tidak dapat diakses dengan ${method} method.`
+                `<h1>Halaman tidak dapat diakses dengan ${method} method.</h1>`
             );
         }
     } else {
