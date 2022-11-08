@@ -1,4 +1,10 @@
-const { addBookHandler, getAllBooksHandler } = require("./handler");
+const {
+    addBookHandler,
+    getAllBooksHandler,
+    getBookByIdHandler,
+    editBookByIdHandler,
+    deleteBookByIdHandler,
+} = require("./handler");
 
 const router = [
     {
@@ -11,18 +17,21 @@ const router = [
         path: "/books",
         handler: getAllBooksHandler,
     },
-    // {
-    //     method: "GET",
-    //     path: "/notes/{id}",
-    // },
-    // {
-    //     method: "PUT",
-    //     path: "/notes/{id}",
-    // },
-    // {
-    //     method: "DELETE",
-    //     path: "/notes/{id}",
-    // },
+    {
+        method: "GET",
+        path: "/books/{id}",
+        handler: getBookByIdHandler,
+    },
+    {
+        method: "PUT",
+        path: "/books/{id}",
+        handler: editBookByIdHandler,
+    },
+    {
+        method: "DELETE",
+        path: "/books/{bookId}",
+        handler: deleteBookByIdHandler,
+    },
 ];
 
 module.exports = router;
