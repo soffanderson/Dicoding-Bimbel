@@ -75,15 +75,30 @@ const addBookHandler = (request, h) => {
 };
 
 const getAllBooksHandler = (request, h) => {
-    const { name, reading } = request.query;
+    const { reading } = request.query;
 
     const isFoundReading = books.filter((book) => book.reading === true);
-
-    if (reading !== undefined) {
+    const isNotYetReading = books.filter((book) => book.reading === false);
+    if (isFoundReading) {
         const response = h.response({
             status: "success",
             data: {
                 books: isFoundReading.map((book) => ({
+                    id: book.id,
+                    name: book.name,
+                    publisher: book.publisher,
+                })),
+            },
+        });
+        response.code(200);
+        return response;
+    }
+
+    if (isNotYetReading) {
+        const response = h.response({
+            status: "success",
+            data: {
+                books: isNotYetReading.map((book) => ({
                     id: book.id,
                     name: book.name,
                     publisher: book.publisher,
@@ -95,6 +110,7 @@ const getAllBooksHandler = (request, h) => {
     }
     const response = h.response({
         status: "success",
+        message: "Menampilkan semua buku",
         data: {
             books: books.map((book) => ({
                 id: book.id,
@@ -105,42 +121,6 @@ const getAllBooksHandler = (request, h) => {
     });
     response.code(200);
     return response;
-
-    const isFoundName = books.filter((book) =>
-        book.name.toLowerCase().includes(name.toLowerCase())
-    );
-
-    if (name !== undefined) {
-        const response = h.response({
-            status: "success",
-            message: "Buku berhasil ditemukan",
-            data: {
-                books: isFoundName.map((book) => ({
-                    id: book.id,
-                    name: book.name,
-                    publisher: book.publisher,
-                })),
-            },
-        });
-        response.code(200);
-        return response;
-    }
-
-    if (reading !== undefined) {
-        const response = h.response({
-            status: "success",
-            message: "Buku berhasil ditemukan",
-            data: {
-                books: isFoundReading.map((book) => ({
-                    id: book.id,
-                    name: book.name,
-                    publisher: book.publisher,
-                })),
-            },
-        });
-        response.code(200);
-        return response;
-    }
 };
 
 const getBookByIdHandler = (request, h) => {
