@@ -75,39 +75,93 @@ const addBookHandler = (request, h) => {
 };
 
 const getAllBooksHandler = (request, h) => {
-    const { reading } = request.query;
+    const { name, reading, finished } = request.query;
 
-    const isFoundReading = books.filter((book) => book.reading === true);
-    const isNotYetReading = books.filter((book) => book.reading === false);
-    if (isFoundReading) {
+    if (name !== undefined) {
         const response = h.response({
             status: "success",
+            message: "Menampilkan buku dengan query nama",
             data: {
-                books: isFoundReading.map((book) => ({
-                    id: book.id,
-                    name: book.name,
-                    publisher: book.publisher,
-                })),
+                books: books
+                    .filter((book) =>
+                        book.name.toLowerCase().includes(name.toLowerCase())
+                    )
+                    .map((book) => ({
+                        id: book.id,
+                        name: book.name,
+                        publisher: book.publisher,
+                    })),
             },
         });
         response.code(200);
         return response;
     }
 
-    if (isNotYetReading) {
+    if (reading === "1") {
         const response = h.response({
             status: "success",
+            message: "Menampilkan buku yang sudah dibaca",
             data: {
-                books: isNotYetReading.map((book) => ({
-                    id: book.id,
-                    name: book.name,
-                    publisher: book.publisher,
-                })),
+                books: books
+                    .filter((book) => book.reading !== false)
+                    .map((book) => ({
+                        id: book.id,
+                        name: book.name,
+                        publisher: book.publisher,
+                    })),
             },
         });
         response.code(200);
         return response;
     }
+
+    if (reading === "0") {
+        const response = h.response({
+            status: "success",
+            message: "Menampilkan buku yang belum dibaca",
+            data: {
+                books: books
+                    .filter((book) => book.reading !== true)
+                    .map((book) => ({
+                        id: book.id,
+                        name: book.name,
+                        publisher: book.publisher,
+                    })),
+            },
+        });
+        response.code(200);
+        return response;
+    }
+
+    // if (finished === "0") {
+    //     const response = h.response({
+    //         status: "success",
+    //         data: {
+    //             books: isNotFinish.map((book) => ({
+    //                 id: book.id,
+    //                 name: book.name,
+    //                 publisher: book.publisher,
+    //             })),
+    //         },
+    //     });
+    //     response.code(200);
+    //     return response;
+    // }
+    // if (finished === "1") {
+    //     const response = h.response({
+    //         status: "success",
+    //         data: {
+    //             books: isFinished.map((book) => ({
+    //                 id: book.id,
+    //                 name: book.name,
+    //                 publisher: book.publisher,
+    //             })),
+    //         },
+    //     });
+    //     response.code(200);
+    //     return response;
+    // }
+
     const response = h.response({
         status: "success",
         message: "Menampilkan semua buku",
