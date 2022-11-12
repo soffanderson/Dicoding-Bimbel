@@ -83,9 +83,7 @@ const getAllBooksHandler = (request, h) => {
       message: 'Menampilkan buku dengan query nama',
       data: {
         books: books
-          .filter((book) =>
-            book.name.toLowerCase().includes(name.toLowerCase())
-          )
+          .filter((book) => book.name.toLowerCase().includes(name.toLowerCase()))
           .map((book) => ({
             id: book.id,
             name: book.name,
@@ -252,27 +250,25 @@ const editBookByIdHandler = (request, h) => {
     return response;
   }
 
-  if (index !== -1) {
-    books[index] = {
-      ...books[index],
-      name,
-      year,
-      author,
-      summary,
-      publisher,
-      pageCount,
-      readPage,
-      reading,
-      updatedAt,
-    };
+  books[index] = {
+    ...books[index],
+    name,
+    year,
+    author,
+    summary,
+    publisher,
+    pageCount,
+    readPage,
+    reading,
+    updatedAt,
+  };
 
-    const response = h.response({
-      status: 'success',
-      message: 'Buku berhasil diperbarui',
-    });
-    response.code(200);
-    return response;
-  }
+  const response = h.response({
+    status: 'success',
+    message: 'Buku berhasil diperbarui',
+  });
+  response.code(200);
+  return response;
 };
 
 const deleteBookByIdHandler = (request, h) => {

@@ -10,11 +10,5 @@
   "parserOptions": {
     "ecmaVersion": "latest"
   },
-  "rules": {
-    "implicit-arrow-linebreak": "off",
-    "function-paren-newline": "off",
-    "consistent-return": "off",
-    "comma-dangle": "off",
-    "linebreak-style": "off"
-  }
+  "rules": {}
 }
