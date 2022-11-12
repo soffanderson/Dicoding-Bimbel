@@ -100,7 +100,7 @@ const getAllBooksHandler = (request, h) => {
     if (reading === "1") {
         const response = h.response({
             status: "success",
-            message: "Menampilkan buku yang sudah dibaca",
+            message: "Menampilkan buku yang sedang dibaca",
             data: {
                 books: books
                     .filter((book) => book.reading !== false)
@@ -118,7 +118,7 @@ const getAllBooksHandler = (request, h) => {
     if (reading === "0") {
         const response = h.response({
             status: "success",
-            message: "Menampilkan buku yang belum dibaca",
+            message: "Menampilkan buku yang tidak sedang dibaca",
             data: {
                 books: books
                     .filter((book) => book.reading !== true)
@@ -133,34 +133,40 @@ const getAllBooksHandler = (request, h) => {
         return response;
     }
 
-    // if (finished === "0") {
-    //     const response = h.response({
-    //         status: "success",
-    //         data: {
-    //             books: isNotFinish.map((book) => ({
-    //                 id: book.id,
-    //                 name: book.name,
-    //                 publisher: book.publisher,
-    //             })),
-    //         },
-    //     });
-    //     response.code(200);
-    //     return response;
-    // }
-    // if (finished === "1") {
-    //     const response = h.response({
-    //         status: "success",
-    //         data: {
-    //             books: isFinished.map((book) => ({
-    //                 id: book.id,
-    //                 name: book.name,
-    //                 publisher: book.publisher,
-    //             })),
-    //         },
-    //     });
-    //     response.code(200);
-    //     return response;
-    // }
+    if (finished === "1") {
+        const response = h.response({
+            status: "success",
+            message: "Menampilkan buku yang sudah selesai dibaca",
+            data: {
+                books: books
+                    .filter((book) => book.finished !== false)
+                    .map((book) => ({
+                        id: book.id,
+                        name: book.name,
+                        publisher: book.publisher,
+                    })),
+            },
+        });
+        response.code(200);
+        return response;
+    }
+    if (finished === "0") {
+        const response = h.response({
+            status: "success",
+            message: "Menampilkan buku yang belum selesai dibaca",
+            data: {
+                books: books
+                    .filter((book) => book.finished !== true)
+                    .map((book) => ({
+                        id: book.id,
+                        name: book.name,
+                        publisher: book.publisher,
+                    })),
+            },
+        });
+        response.code(200);
+        return response;
+    }
 
     const response = h.response({
         status: "success",
