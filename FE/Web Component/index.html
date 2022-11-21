@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Custom Elements Examples</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: sans-serif;
+      }
+
+      .ribbon {
+        top: 0;
+        left: 0;
+        height: 200px;
+        width: 100%;
+        background-color: cornflowerblue;
+      }
+
+      .container {
+        max-width: 800px;
+        width: 90%;
+        margin: -100px auto 0 auto;
+      }
+
+      .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+        overflow: hidden;
+        background-color: white;
+        padding: 16px 32px;
+      }
+
+      .card-header > h1,
+      span {
+        margin-bottom: 8px;
+      }
+
+      .card-body {
+        padding: 16px;
+      }
+
+      .card-body > ol {
+        list-style-position: outside; /* or 'inside' */
+        margin-left: 1em; /* gives 'room' for the numbers to appear in */
+      }
+
+      .card-body > ol > li {
+        padding: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="ribbon"></div>
+    <div class="container">
+      <div class="card">
+        <div class="card-header">
+          <h1>Custom Element Example</h1>
+          <p>
+            Berikut daftar contoh kode/proyek yang digunakan selama pembelajaran
+            custom element. <em>Reload</em> untuk kembali ke index menu.
+          </p>
+          <br />
+          <p>
+            Jika output console tidak muncul, buka link berikut pada tab baru:
+            <a href="https://w3jyx7.csb.app/" target="_blank"
+              >https://w3jyx7.csb.app/</a
+            >
+          </p>
+        </div>
+        <div class="card-body">
+          <ol>
+            <li>
+              <a href="./01-first-custom-element/index.html"
+                >First Custom Element</a
+              >
+            </li>
+            <li>
+              <a href="./02-element-lifecycle/index.html">Element Lifecycle</a>
+            </li>
+            <li>
+              <a href="./03-attribute-observe/index.html">Attribute Observe</a>
+            </li>
+            <li>
+              <a href="./04-attribute-and-method/index.html"
+                >Attribute and Method</a
+              >
+            </li>
+            <li>
+              <a href="./05-styling-without-shadow-dom/index.html"
+                >Styling without Shadow DOM</a
+              >
+            </li>
+            <li>
+              <a href="./06-handling-complex-data/index.html"
+                >Handling Complex Data</a
+              >
+            </li>
+            <li>
+              <a href="./07-nested-custom-element/index.html"
+                >Nested Custom Element</a
+              >
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
