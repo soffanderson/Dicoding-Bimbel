@@ -23,6 +23,7 @@
     "webpack-merge": "^5.8.0"
   },
   "dependencies": {
+    "daisy": "^0.2.0",
     "eslint": "^8.29.0",
     "regenerator-runtime": "^0.13.11"
   }

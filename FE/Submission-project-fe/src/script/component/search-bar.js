@@ -1,9 +1,4 @@
 class SearchBar extends HTMLElement {
-  constructor() {
-    super();
-    this.shadowDOM = this.attachShadow({ mode: 'open' });
-  }
-
   connectedCallback() {
     this.render();
   }
@@ -16,21 +11,18 @@ class SearchBar extends HTMLElement {
 
   //   mendapatkan nilai value pada form untuk digunakan di main.js
   get value() {
-    return this.shadowDOM.querySelector('#searchElement').value;
+    return this.querySelector('#searchElement').value;
   }
 
   render() {
-    this.shadowDOM.innerHTML = `
+    this.innerHTML = `
           <style>
       .search-container {
-        max-width: 800px;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
         padding: 16px;
-        border-radius: 5px;
         display: flex;
         position: sticky;
         top: 10px;
-        background-color: white;
       }
       
       .search-container > input {
@@ -83,7 +75,7 @@ class SearchBar extends HTMLElement {
       }
       </style>
     
-    <div id="search-container" class="search-container">
+    <div id="search-container" class="search-container mx-auto max-w-7xl bg-slate-900">
       <input placeholder="Search football club" id="searchElement" type="search">
       <button id="searchButtonElement" type="submit">Search</button>
     </div>`;
