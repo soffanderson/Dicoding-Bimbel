@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "start-dev": "webpack serve --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js"
+    "build": "webpack --config webpack.prod.js",
+    "tail": "npx tailwindcss -i ./src/styles/input.css -o ./dist/output.css --watch"
   },
   "author": "",
   "license": "ISC",
