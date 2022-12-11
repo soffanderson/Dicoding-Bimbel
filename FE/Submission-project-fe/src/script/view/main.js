@@ -5,10 +5,11 @@ import DataSource from '../data/data-source.js';
 const main = () => {
   const searchElement = document.querySelector('search-bar');
   const animeListElement = document.querySelector('anime-list');
-  const baseUrl = 'https://gogoanime.consumet.org/recent-release';
+  const animePopularElement = document.querySelector('#dropdown-cta');
+  const baseUrl = 'https://gogoanime.consumet.org';
 
   const getAnime = () => {
-    fetch(`${baseUrl}`)
+    fetch(`${baseUrl}/recent-release`)
       .then((response) => {
         return response.json();
       })
@@ -24,33 +25,64 @@ const main = () => {
       });
   };
 
+  const getPopular = () => {
+    fetch(`${baseUrl}/popular`)
+      .then((response) => {
+        return response.json();
+      })
+      .then((animelist) => {
+        if (animelist.error) {
+          showResponseMessage(animelist.message);
+        } else {
+          renderPopularAnime(animelist);
+        }
+      })
+      .catch((error) => {
+        showResponseMessage(error);
+      });
+  };
+
   const renderAllAnime = (animes) => {
     animeListElement.innerHTML = '';
 
     animes.forEach((anime) => {
       animeListElement.innerHTML += `
-      <div class="m-1 w-60 hover:opacity-100 opacity-75 bg-slate-800 border border-gray-800 rounded-lg">
-        <a href="#">
-            <img class="h-56 w-full object-cover object-center rounded-t-lg" src="${anime.animeImg}" alt="" />
+       <div class="m-1 w-40 hover:opacity-100 opacity-75 rounded-lg">
+      <div class="relative">
+        <a href="${anime.episodeUrl}">
+          <img class="h-56 w-full object-cover object-center rounded-lg" src="${anime.animeImg}" alt="" />
         </a>
-        <div class="p-5">
-            <a href="#">
-                <h5 class="mb-2 text-2xl font-bold tracking-tight text-white">${anime.animeTitle}</h5>
-            </a>
-            <p class="text-ellipsis overflow-auto max-h-44 font-normal text-gray-400">Episode: ${anime.episodeNum}</p>
-            <p class="text-ellipsis overflow-auto max-h-44 mb-3 font-normal text-gray-400">Subtitle: ${anime.subOrDub}</p>
-            <a href="${anime.animeUrl}"
-                class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                Download
-                <svg aria-hidden="true" class="w-4 h-4 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd"
-                        d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                        clip-rule="evenodd"></path>
-                </svg>
-            </a>
+        <div class="absolute bottom-1 left-1 flex justify-between">
+          <span class="bg-slate-100 text-slate-800 text-xs font-semibold mr-1 px-2.5 py-0.5 rounded shadow-sm shadow-slate-500">Ep ${anime.episodeNum}</span>
+          <span class="bg-yellow-400 text-yellow-800 text-xs font-semibold mr-1 px-2.5 py-0.5 rounded shadow-sm shadow-slate-500">${anime.subOrDub}</span>
         </div>
-    </div>
+      </div>
+        
+      <div class="p-1">
+        <p class="text-wrap mb-2 tracking-tight text-white text-center">
+          <a href="${anime.animeUrl}">${anime.animeTitle}</a>
+        </p>
+      </div>
+    </div> 
+      `;
+    });
+  };
+
+  const renderPopularAnime = (animes) => {
+    animePopularElement.innerHTML = '';
+    animes.forEach((anime) => {
+      animePopularElement.innerHTML += `
+       <div class="hover:opacity-100 opacity-75 rounded-lg">
+      <div class="grid grid-cols-2">
+        <a href="${anime.animeUrl}">
+          <img class="w-24 mb-3 object-cover object-center rounded-lg ml-3 mt-2" src="${anime.animeImg}" alt="" />
+        </a>
+          <p class="text-wrap -ml-3 mb-2 tracking-tight text-white font-bold">
+            <a href="${anime.animeUrl}">${anime.animeTitle}</a>
+                      <span class="bg-green-100 text-green-800 text-xs font-semibold mr-1 px-2.5 py-0.5 rounded shadow-sm shadow-green-500">Released: ${anime.releasedDate}</span>
+          </p>
+      </div>
+    </div> 
       `;
     });
   };
@@ -82,6 +114,7 @@ const main = () => {
 
   searchElement.clickEvent = onButtonSearchClicked;
   getAnime();
+  getPopular();
 };
 
 export default main;
