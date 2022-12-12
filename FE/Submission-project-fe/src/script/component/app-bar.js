@@ -1,34 +1,13 @@
 class AppBar extends HTMLElement {
-  constructor() {
-    super();
-    this.shadowDOM = this.attachShadow({ mode: 'open' });
-  }
-
   connectedCallback() {
     this.render();
   }
 
   render() {
-    this.shadowDOM.innerHTML = `
-          <style>
-        * {
-          margin: 0;
-          padding: 0;
-          box-sizing: border-box;
-        }
-        :host {
-          display: block;
-          width: 100%;
-          background-color: cornflowerblue;
-          color: white;
-          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-        }
-        h2 {
-          padding: 16px;
-        }
-        </style>
-    
-    <h2>Club Finder</h2>`;
+    this.innerHTML = `
+    <div class="max-w-5xl p-5 bg-slate-900 text-slate-200 mx-auto rounded-t-md shadow-slate-600 shadow-lg">
+      <h1 class="text-2xl text-center font-bold">Anime Collections</h1>
+    </div>`;
   }
 }
 

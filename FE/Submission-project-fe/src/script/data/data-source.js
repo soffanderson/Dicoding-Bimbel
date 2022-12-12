@@ -1,16 +1,16 @@
-import clubs from './clubs.js';
+// import clubs from './clubs.js';
 
 class DataSource {
-  static searchClub(keyword) {
+  static searchAnime(keyword) {
     return fetch(
-      `https://sports-api.dicoding.dev/teams/search?t=${keyword}`
+      `https://gogoanime.consumet.org/search?keyw=${keyword}`
     )
       .then((response) => {
         return response.json();
       })
-      .then((responseJson) => {
-        if (responseJson.teams) {
-          return Promise.resolve(responseJson.teams);
+      .then((animelist) => {
+        if (animelist) {
+          return Promise.resolve(animelist);
         } else {
           return Promise.reject(`${keyword} is not found`);
         }
