@@ -3,76 +3,75 @@ import '../component/search-bar.js';
 import DataSource from '../data/data-source.js';
 
 const main = () => {
-  const searchElement = document.querySelector('search-bar');
-  const animeListElement = document.querySelector('anime-list');
-  const animePopularElement = document.querySelector('#dropdown-cta');
-  const footer = document.querySelector('#footer');
-  const baseUrl = 'https://gogoanime.consumet.org';
+	const searchElement = document.querySelector('search-bar');
+	const animeListElement = document.querySelector('anime-list');
+	const animePopularElement = document.querySelector('#dropdown-cta');
+	const footer = document.querySelector('#footer');
+	const baseUrl = 'https://gogoanime.consumet.org';
 
-  const getAnime = () => {
-    fetch(`${baseUrl}/recent-release`)
-      .then((response) => {
-        return response.json();
-      })
-      .then((animelist) => {
-        if (animelist.error) {
-          showResponseMessage(animelist.message);
-        } else {
-          renderAllAnime(animelist);
-        }
-      })
-      .catch((error) => {
-        showResponseMessage(error);
-      });
-  };
+	const getAnime = () => {
+		fetch(`${baseUrl}/recent-release`)
+			.then(response => response.json())
+			.then(animelist => {
+				if (animelist.error) {
+					showResponseMessage(animelist.message);
+				} else {
+					renderAllAnime(animelist);
+				}
+			})
+			.catch(error => {
+				showResponseMessage(error);
+			});
+	};
 
-  const getPopular = () => {
-    fetch(`${baseUrl}/popular`)
-      .then((response) => {
-        return response.json();
-      })
-      .then((animelist) => {
-        if (animelist.error) {
-          showResponseMessage(animelist.message);
-        } else {
-          renderPopularAnime(animelist);
-        }
-      })
-      .catch((error) => {
-        showResponseMessage(error);
-      });
-  };
+	const getPopular = () => {
+		fetch(`${baseUrl}/popular`)
+			.then(response => response.json())
+			.then(animelist => {
+				if (animelist.error) {
+					showResponseMessage(animelist.message);
+				} else {
+					renderPopularAnime(animelist);
+				}
+			})
+			.catch(error => {
+				showResponseMessage(error);
+			});
+	};
 
-  const renderAllAnime = (animes) => {
-    animeListElement.innerHTML = '';
+	const renderAllAnime = animes => {
+		animeListElement.innerHTML = '';
 
-    animes.forEach((anime) => {
-      animeListElement.innerHTML += `
-       <div class="m-1 w-40 hover:opacity-100 opacity-75 rounded-lg">
-      <div class="relative">
-        <a href="${anime.episodeUrl}">
-          <img class="h-56 w-full object-cover object-center rounded-lg" src="${anime.animeImg}" alt="" />
-        </a>
-        <div class="absolute bottom-1 left-1 flex justify-between">
-          <span class="bg-slate-100 text-slate-800 text-xs font-semibold mr-1 px-2.5 py-0.5 rounded shadow-sm shadow-slate-500">Ep ${anime.episodeNum}</span>
-          <span class="bg-yellow-400 text-yellow-800 text-xs font-semibold mr-1 px-2.5 py-0.5 rounded shadow-sm shadow-slate-500">${anime.subOrDub}</span>
+		animes.forEach(anime => {
+			animeListElement.innerHTML += `
+        <div class="m-1 w-40 hover:opacity-100 opacity-75 rounded-lg">
+            <div class="relative">
+                <a href="${anime.episodeUrl}">
+                    <img class="h-56 w-full object-cover object-center rounded-lg" src="${anime.animeImg}" alt="" />
+                </a>
+                <div class="absolute bottom-1 left-1 flex justify-between">
+                    <span
+                        class="bg-slate-100 text-slate-800 text-xs font-semibold mr-1 px-2.5 py-0.5 rounded shadow-sm shadow-slate-500">Ep
+                        ${anime.episodeNum}</span>
+                    <span
+                        class="bg-yellow-400 text-yellow-800 text-xs font-semibold mr-1 px-2.5 py-0.5 rounded shadow-sm shadow-slate-500">${anime.subOrDub}</span>
+                </div>
+            </div>
+
+            <div class="p-1">
+                <p class="text-wrap mb-2 tracking-tight text-white text-center">
+                    <a href="${anime.animeUrl}">${anime.animeTitle}</a>
+                </p>
+            </div>
         </div>
-      </div>
-        
-      <div class="p-1">
-        <p class="text-wrap mb-2 tracking-tight text-white text-center">
-          <a href="${anime.animeUrl}">${anime.animeTitle}</a>
-        </p>
-      </div>
-    </div> 
       `;
-    });
-  };
+		});
+	};
 
-  const renderPopularAnime = (animes) => {
-    animePopularElement.innerHTML = '';
-    animes.forEach((anime) => {
-      animePopularElement.innerHTML += `
+	const renderPopularAnime = animes => {
+		animePopularElement.innerHTML = '';
+		animes.forEach(anime => {
+			animePopularElement.innerHTML += `
        <div class="hover:opacity-100 opacity-75 rounded-lg">
          <div class="grid grid-cols-2">
            <a href="${anime.animeUrl}">
@@ -85,76 +84,76 @@ const main = () => {
           </div>
         </div> 
         `;
-    });
-  };
+		});
+	};
 
-  const showResponseMessage = (
-    message = 'Check your internet connection'
-  ) => {
-    alert(message);
-  };
+	const showResponseMessage = (
+		message = 'Check your internet connection',
+	) => {
+		alert(message);
+	};
 
-  const onButtonSearchClicked = async () => {
-    try {
-      const result = await DataSource.searchAnime(
-        searchElement.value
-      );
-      renderResult(result);
-    } catch (message) {
-      fallbackResult(message);
-    }
-  };
+	const onButtonSearchClicked = async () => {
+		try {
+			const result = await DataSource.searchAnime(
+				searchElement.value,
+			);
+			renderResult(result);
+		} catch (message) {
+			fallbackResult(message);
+		}
+	};
 
-  const renderResult = (results) => {
-    animeListElement.animes = results;
-  };
+	const renderResult = results => {
+		animeListElement.animes = results;
+	};
 
-  const fallbackResult = (message) => {
-    animeListElement.renderError(message);
-  };
+	const fallbackResult = message => {
+		animeListElement.renderError(message);
+	};
 
-  const footerArea = (i) => {
-    footer.innerHTML = `
-          <div class="md:flex md:justify-between">
+	const footerArea = () => {
+		footer.innerHTML = `
+      <div class="md:flex md:justify-between">
         <div class="mb-6 md:mb-0">
-          <a href="https://flowbite.com/" class="flex items-center">
+          <a href="/" class="flex items-center">
             <span class="self-center text-2xl font-semibold whitespace-nowrap text-slate-200">Anime Collections</span>
           </a>
         </div>
         <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
           <div>
             <h2 class="mb-6 text-sm font-semibold text-slate-200 uppercase ">Resources</h2>
-            <ul class="text-slate-200 ">
-              <li class="mb-4">
-                <a href="https://flowbite.com/" class="hover:underline">Flowbite</a>
-              </li>
-              <li>
-                <a href="https://tailwindcss.com/" class="hover:underline">Tailwind CSS</a>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h2 class="mb-6 text-sm font-semibold text-slate-200 uppercase ">Follow us</h2>
-            <ul class="text-slate-200">
-              <li class="mb-4">
-                <a href="https://github.com/themesberg/flowbite" class="hover:underline ">Github</a>
-              </li>
-              <li>
-                <a href="https://discord.gg/4eeurUVvTy" class="hover:underline">Discord</a>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h2 class="mb-6 text-sm font-semibold text-slate-200 uppercase ">Legal</h2>
-            <ul class="text-slate-200 ">
-              <li class="mb-4">
-                <a href="#" class="hover:underline">Privacy Policy</a>
-              </li>
-              <li>
-                <a href="#" class="hover:underline">Terms &amp; Conditions</a>
-              </li>
-            </ul>
-          </div>
+              <ul class="text-slate-200 ">
+                <li class="mb-4">
+                  <a href="https://flowbite.com/" class="hover:underline">Flowbite</a>
+                </li>
+                <li>
+                  <a href="https://tailwindcss.com/" class="hover:underline">Tailwind CSS</a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h2 class="mb-6 text-sm font-semibold text-slate-200 uppercase ">Follow us</h2>
+                <ul class="text-slate-200">
+                  <li class="mb-4">
+                    <a href="https://github.com/themesberg/flowbite" class="hover:underline ">Github</a>
+                  </li>
+                  <li>
+                    <a href="https://discord.gg/4eeurUVvTy" class="hover:underline">Discord</a>
+                  </li>
+                </ul>
+            </div>
+            <div>
+              <h2 class="mb-6 text-sm font-semibold text-slate-200 uppercase ">Legal</h2>
+                <ul class="text-slate-200 ">
+                  <li class="mb-4">
+                    <a href="#" class="hover:underline">Privacy Policy</a>
+                  </li>
+                  <li>
+                    <a href="#" class="hover:underline">Terms &amp; Conditions</a>
+                  </li>
+                </ul>
+            </div>
         </div>
       </div>
       <hr class="my-6 border-slate-text-slate-200 sm:mx-auto dark:border-slate-text-slate-200 lg:my-8" />
@@ -204,12 +203,12 @@ const main = () => {
           </a>
         </div>
       </div>`;
-  };
+	};
 
-  searchElement.clickEvent = onButtonSearchClicked;
-  getAnime();
-  getPopular();
-  footerArea();
+	searchElement.clickEvent = onButtonSearchClicked;
+	getAnime();
+	getPopular();
+	footerArea();
 };
 
 export default main;
