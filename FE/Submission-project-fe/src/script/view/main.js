@@ -44,7 +44,7 @@ const main = () => {
 
 		animes.forEach(anime => {
 			animeListElement.innerHTML += `
-        <div class="m-1 w-40 hover:opacity-100 opacity-75 rounded-lg">
+        <div class="m-1 w-full sm:w-48 md:w-40 hover:opacity-100 opacity-75 rounded-lg">
             <div class="relative">
                 <a href="${anime.episodeUrl}">
                     <img id="demo-trigger" class="h-56 w-full object-cover object-center rounded-lg" src="${anime.animeImg}" alt="" />
@@ -73,12 +73,12 @@ const main = () => {
 		animes.forEach(anime => {
 			animePopularElement.innerHTML += `
        <div class="hover:opacity-100 opacity-75 rounded-lg">
-         <div class="grid grid-cols-2">
+         <div class="grid grid-cols-1 md:grid-cols-2 justify-items-center ">
            <a href="${anime.animeUrl}">
-             <img class="w-24 mb-3 object-cover object-center rounded-lg ml-3 mt-2" src="${anime.animeImg}" alt="" />
+             <img class="w-90 md:w-44 lg:w-24 mb-3 object-cover object-center rounded-lg mt-2" src="${anime.animeImg}" alt="" />
             </a>
-            <p class="text-wrap -ml-3 mb-2 tracking-tight text-white font-bold">
-              <a href="${anime.animeUrl}">${anime.animeTitle}</a>
+            <p class="text-wrap mx-3 md:ml-8 lg:-ml-4 mb-2 tracking-tight text-white font-bold">
+              <a href="${anime.animeUrl}">${anime.animeTitle}</a><br>
               <span class="inline-block bg-green-100 text-green-800 text-xs font-semibold mr-1 px-2.5 py-0.5 rounded shadow-sm shadow-green-500">Released: ${anime.releasedDate}</span>
             </p>
           </div>

@@ -6,12 +6,12 @@ class AnimeItem extends HTMLElement {
 
 	render() {
 		this.innerHTML = `
-      <div class="m-1 w-40 hover:opacity-100 opacity-75 rounded-lg">
+      <div class="m-1 w-full sm:w-48 md:w-40 hover:opacity-100 opacity-75 rounded-lg">
           <div class="relative">
               <a href="${this._anime.animeUrl}">
                   <img class="h-56 w-full object-cover object-center rounded-lg" src="${this._anime.animeImg}" alt="" />
               </a>
-              <div class="absolute bottom-1 left-1">
+              <div class="absolute bottom-1 left-1 flex justify-between">
                   <span
                       class="bg-green-100 text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-green-200 dark:text-green-900">${this._anime.status}</span>
               </div>
