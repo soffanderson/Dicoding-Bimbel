@@ -11,8 +11,10 @@
         "sourceType": "module"
     },
     "rules": {
-        "no-alert": "off",
-        "prefer-promise-reject-errors": "off",
-        "accessor-pairs": "off"
+        "no-alert":"off",
+        "prefer-promise-reject-errors":"off",
+        "accessor-pairs":"off",
+        "no-dupe-keys":"off"
+
     }
 }

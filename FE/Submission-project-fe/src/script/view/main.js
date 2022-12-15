@@ -8,7 +8,7 @@ const main = () => {
 	const animePopularElement = document.querySelector('#dropdown-cta');
 	const footer = document.querySelector('#footer');
 	const baseUrl = 'https://gogoanime.consumet.org';
-  
+
 	const getAnime = () => {
 		fetch(`${baseUrl}/recent-release`)
 			.then(response => response.json())
