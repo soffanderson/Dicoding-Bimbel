@@ -4,7 +4,8 @@
   box-sizing: border-box;
 }
 
-body, html {
+body,
+html {
   margin: 0;
   padding: 0;
   width: 100%;
@@ -12,7 +13,7 @@ body, html {
 }
 
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 12px;
   color: #424242;
 }
@@ -50,13 +51,13 @@ body {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
+  text-align: center;
 }
 
 .nav__list {
   width: 100%;
   padding: 0;
   margin: 0;
-  text-align: center;
 }
 
 .nav__item {
@@ -65,11 +66,13 @@ body {
   width: 24%;
   text-align: center;
   line-height: 24px;
-  padding: 24px;
+  /* padding: 24px; */
   text-transform: uppercase;
 }
 
 .nav a {
+  display: inline-block;
+  padding: 1.3em;
   text-decoration: none;
   color: #616161;
 }
@@ -78,7 +81,6 @@ body {
   text-decoration: underline;
   color: #000;
 }
-
 
 /*
  * Jumbotron
@@ -90,7 +92,7 @@ body {
   min-height: 380px;
   width: 100%;
   text-align: center;
-  background-image: url("../images/hero.jpg");
+  background-image: url('../images/hero.jpg');
   background-position: center;
   background-color: green;
   padding: 5px;
@@ -113,7 +115,6 @@ body {
   font-size: 18px;
   font-weight: 300;
 }
-
 
 /*
  * main
@@ -160,21 +161,21 @@ main {
 .headline__content {
   width: 100%;
   float: left;
-  padding: 16px 32px;
+  padding: 16px 0;
 }
 
 .headline__title {
-  font-size: 32px;
+  font-size: 24px;
   font-weight: 500;
 }
 
 .headline__description {
-  font-size: 16px;
+  font-size: 12px;
   margin-top: 12px;
 }
 
 .headline__button {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   text-transform: uppercase;
   margin-top: 24px;
   cursor: pointer;
@@ -185,8 +186,8 @@ main {
   background-color: #2c3e50;
   transition: opacity 0.3s;
 
-  min-width: 44px;
-  min-height: 44px;
+  min-width: 44px;
+  min-height: 44px;
 }
 
 .headline__button:hover {
@@ -242,7 +243,7 @@ main {
 }
 
 .post-item__content {
-  padding: 16px 32px 32px 32px;
+  padding: 16px;
 }
 
 .post-item__thumbnail {
@@ -262,7 +263,7 @@ main {
 
 .post-item__title {
   font-weight: 500;
-  font-size: 18px;
+  font-size: 16px;
   margin-top: 16px;
   transition: 0.3s opacity;
 }
@@ -278,7 +279,7 @@ main {
 
 .post-item__description {
   margin-top: 16px;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 1.5em;
 }
 
@@ -306,28 +307,104 @@ footer li {
 
 footer a {
   text-decoration: none;
-  color: #fff
+  color: #fff;
 }
 
- @media screen and (min-width: 576px) {
+.header__menu {
+  font-size: 32px;
+  margin: 10px auto;
+  display: block;
+  width: 30px;
+}
+
+@media screen and (max-width: 499px) {
+  .nav {
+    z-index: 10;
+    background-color: #fff;
+    width: 60%;
+    position: absolute;
+
+    /* This trasform moves the drawer off canvas. */
+    -webkit-transform: translate(-300px, 0);
+    transform: translate(-300px, 0);
+
+    /* Optionally, we animate the drawer. */
+    transition: transform 0.3s ease;
+  }
+
+  .open {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+
+  .nav__item {
+    display: list-item;
+    border-bottom: 1px solid #e0e0e0;
+    width: 100%;
+    text-align: left;
+  }
+}
+
+@media screen and (min-width: 455px) {
+  .headline__content {
+    padding: 16px 16px;
+  }
+  .headline__title {
+    font-size: 28px;
+  }
+  .headline__description {
+    font-size: 16px;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .header__menu {
+    display: none;
+  }
+}
+
+/* Responsive main */
+@media screen and (min-width: 650px) {
+  .headline__content {
+    margin: 0 auto;
+    max-width: 650px;
+  }
+  .post-item__content {
+    padding: 16px 32px 32px 32px;
+  }
+  .post-item__title {
+    font-size: 18px;
+  }
+  .post-item__description {
+    font-size: 14px;
+  }
+}
+
+@media screen and (min-width: 700px) {
   .posts {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 10px;
     grid-row-gap: 16px;
   }
-} 
+}
 
-@media screen and (min-width: 768px) {
-  .hero {
-    padding: 30px;
+@media screen and (min-width: 800px) {
+  .nav__list {
+    max-width: 800px;
+    margin: 0 auto;
   }
+}
 
+@media screen and (min-width: 900px) {
   .headline {
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
 
+  .headline__content {
+    padding: 16px 32px;
+  }
   .posts {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
