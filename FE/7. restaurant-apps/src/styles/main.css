@@ -15,7 +15,8 @@ html {
 body {
   font-family: 'Oswald', sans-serif;
   font-size: 12px;
-  color: #424242;
+  color: #000;
+  background-color: #f2e7d5;
 }
 
 /*
@@ -34,6 +35,8 @@ body {
 }
 
 .header__inner {
+  display: grid;
+  grid-template-columns: 2fr 0.5fr;
   width: 100%;
   text-align: center;
   margin-left: auto;
@@ -42,10 +45,17 @@ body {
 
 .header__title {
   font-weight: 300;
-  font-size: 4em;
-  margin: 0.5em 0.25em;
+  font-size: 3em;
+  margin: 0.5em 0.5em;
   display: inline-block;
   color: #212121;
+}
+
+.header__menu {
+  font-size: 32px;
+  margin: auto;
+  display: block;
+  width: 30px;
 }
 
 /*
@@ -91,9 +101,7 @@ body {
 }
 
 .nav a:hover {
-  text-decoration: none;
-  color: #fff;
-  background-color: #393e46;
+  font-weight: bold;
 }
 
 /*
@@ -108,7 +116,9 @@ body {
   text-align: center;
   background-image: url('../public/images/heros/hero-image_2.jpg');
   background-position: center;
-  background-color: green;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* background-color: black; */
   padding: 5px;
 }
 
@@ -121,6 +131,7 @@ body {
   color: #fff;
   font-weight: 500;
   font-size: 36px;
+  text-shadow: 1px 1px 10px black;
 }
 
 .hero__tagline {
@@ -128,6 +139,7 @@ body {
   margin-top: 16px;
   font-size: 18px;
   font-weight: 300;
+  text-shadow: 1px 1px 10px black;
 }
 
 /*
@@ -324,13 +336,6 @@ footer a {
   color: #fff;
 }
 
-.header__menu {
-  font-size: 32px;
-  margin: 10px auto;
-  display: block;
-  width: 30px;
-}
-
 @media screen and (max-width: 499px) {
   .nav {
     z-index: 10;
@@ -375,6 +380,9 @@ footer a {
   .header__menu {
     display: none;
   }
+  .header__inner {
+    grid-template-columns: 3fr;
+  }
 }
 
 /* Responsive main */
@@ -400,6 +408,10 @@ footer a {
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 10px;
     grid-row-gap: 16px;
+  }
+  .header__title {
+    font-size: 4em;
+    margin: 0.5em 0.25em;
   }
 }
 
