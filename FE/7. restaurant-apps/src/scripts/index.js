@@ -8,6 +8,8 @@ const hero = document.querySelector('.hero');
 const main = document.querySelector('main');
 const drawer = document.querySelector('#drawer');
 
+const animeListElement = document.querySelector('anime-list');
+
 menu.addEventListener('click', function (event) {
   drawer.classList.toggle('open');
   event.stopPropagation();
