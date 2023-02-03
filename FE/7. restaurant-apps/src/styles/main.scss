@@ -45,7 +45,8 @@ button {
   min-width: 44px;
   min-height: 44px;
 }
-anchor {
+a {
+  display: inline-block;
   min-width: 44px;
   min-height: 44px;
 }
@@ -438,6 +439,8 @@ footer {
         color: $color_3;
       }
       i {
+        min-height: 44px;
+        min-width: 44px;
         font-size: 2em;
         margin: 0% 1%;
       }
