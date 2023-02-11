@@ -1,10 +1,10 @@
-self.addEventListener('install', (event) => {
+self.addEventListener('install', () => {
   console.log('Installing Service Worker ...');
 
   // TODO: Caching App Shell Resource
 });
 
-self.addEventListener('activate', (event) => {
+self.addEventListener('activate', () => {
   console.log('Activating Service Worker ...');
 
   // TODO: Delete old caches
