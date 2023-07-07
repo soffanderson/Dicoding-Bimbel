@@ -1,3 +1,4 @@
+/* eslint-disable no-prototype-builtins */
 /* eslint-disable eqeqeq */
 /* eslint-disable consistent-return */
 import { itActsAsFavoriteMovieModel } from './contract/favoriteMovieContract';
