@@ -1,5 +1,8 @@
 import FavoriteMovieIdb from '../../data/favorite-movie-idb';
 import { createMovieItemTemplate } from '../templates/template-creator';
+import FavoriteMovieSearchView from './liked-movies/favorite-movie-search-view';
+
+const view = new FavoriteMovieSearchView();
 
 const Like = {
   async render() {
@@ -13,12 +16,8 @@ const Like = {
   },
 
   async afterRender() {
-    const movies = await FavoriteMovieIdb.getAllMovies();
-    const moviesContainer = document.querySelector('#movies');
-    
-    movies.forEach((movie) => {
-      moviesContainer.innerHTML += createMovieItemTemplate(movie);
-    });
+    new FavoriteMovieShowPresenter({ view, favoriteMovies: FavoriteMovieIdb });
+    new FavoriteMovieSearchPresenter({ view, favoriteMovies: FavoriteMovieIdb });
   },
 };
 
